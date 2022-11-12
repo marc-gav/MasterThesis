@@ -1,0 +1,636 @@
+sentence|word|attention|cluster_label|sentence_index|salience score
+The plant, one of the 10 biggest atomic power stations in the world, has been occupied by Russian forces since early in the war, which marked its 200th day on Sunday.|[SEP]|0.14909598231315613|5|0|attention
+The plant, one of the 10 biggest atomic power stations in the world, has been occupied by Russian forces since early in the war, which marked its 200th day on Sunday.|,|0.10227740556001663|5|0|attention
+The plant, one of the 10 biggest atomic power stations in the world, has been occupied by Russian forces since early in the war, which marked its 200th day on Sunday.|,|0.09976344555616379|5|0|attention
+The plant, one of the 10 biggest atomic power stations in the world, has been occupied by Russian forces since early in the war, which marked its 200th day on Sunday.|atomic|0.053302790969610214|5|0|attention
+The plant, one of the 10 biggest atomic power stations in the world, has been occupied by Russian forces since early in the war, which marked its 200th day on Sunday.|power|0.03733054921030998|5|0|attention
+A landmark new study of plant life in one of the world’s driest places could yield new drought-resistant crops — if mining for electric vehicle batteries doesn't destroy the ecosystems first.|ecosystems|0.17140169441699982|6|1|attention
+A landmark new study of plant life in one of the world’s driest places could yield new drought-resistant crops — if mining for electric vehicle batteries doesn't destroy the ecosystems first.|[CLS]|0.0460728220641613|6|1|attention
+A landmark new study of plant life in one of the world’s driest places could yield new drought-resistant crops — if mining for electric vehicle batteries doesn't destroy the ecosystems first.|mining|0.019120274111628532|6|1|attention
+A landmark new study of plant life in one of the world’s driest places could yield new drought-resistant crops — if mining for electric vehicle batteries doesn't destroy the ecosystems first.|study|0.016862228512763977|6|1|attention
+A landmark new study of plant life in one of the world’s driest places could yield new drought-resistant crops — if mining for electric vehicle batteries doesn't destroy the ecosystems first.|life|0.014279489405453205|6|1|attention
+Thousands of tons of diesel leaked into waterways in a major accident at a power plant in Siberia.|[SEP]|0.4926528036594391|8|2|attention
+Thousands of tons of diesel leaked into waterways in a major accident at a power plant in Siberia.|.|0.16236935555934906|8|2|attention
+Thousands of tons of diesel leaked into waterways in a major accident at a power plant in Siberia.|power|0.05177873745560646|8|2|attention
+Thousands of tons of diesel leaked into waterways in a major accident at a power plant in Siberia.|diesel|0.037275318056344986|8|2|attention
+Thousands of tons of diesel leaked into waterways in a major accident at a power plant in Siberia.|[CLS]|0.03546322509646416|8|2|attention
+The location, in the shadow of New York's dirtiest power plant, is a deliberate choice by the senator and his campaign.|a|0.14685678482055664|8|3|attention
+The location, in the shadow of New York's dirtiest power plant, is a deliberate choice by the senator and his campaign.|power|0.04785999283194542|8|3|attention
+The location, in the shadow of New York's dirtiest power plant, is a deliberate choice by the senator and his campaign.|,|0.04192085564136505|8|3|attention
+The location, in the shadow of New York's dirtiest power plant, is a deliberate choice by the senator and his campaign.|is|0.03411819040775299|8|3|attention
+The location, in the shadow of New York's dirtiest power plant, is a deliberate choice by the senator and his campaign.|shadow|0.025951752439141273|8|3|attention
+More than 60 boxes of documents from an investigation into violations at Rocky Flats, a former nuclear weapons plant, have gone missing.|[SEP]|0.31204262375831604|8|4|attention
+More than 60 boxes of documents from an investigation into violations at Rocky Flats, a former nuclear weapons plant, have gone missing.|.|0.16190046072006226|8|4|attention
+More than 60 boxes of documents from an investigation into violations at Rocky Flats, a former nuclear weapons plant, have gone missing.|,|0.16077566146850586|8|4|attention
+More than 60 boxes of documents from an investigation into violations at Rocky Flats, a former nuclear weapons plant, have gone missing.|nuclear|0.050782572478055954|8|4|attention
+More than 60 boxes of documents from an investigation into violations at Rocky Flats, a former nuclear weapons plant, have gone missing.|at|0.03646900877356529|8|4|attention
+Kansas seized 350 pounds of leafy green plant material from a FedEx truck two years ago.|[CLS]|0.05213814973831177|6|5|attention
+Kansas seized 350 pounds of leafy green plant material from a FedEx truck two years ago.|material|0.04457426071166992|6|5|attention
+Kansas seized 350 pounds of leafy green plant material from a FedEx truck two years ago.|Kansas|0.03195350244641304|6|5|attention
+Kansas seized 350 pounds of leafy green plant material from a FedEx truck two years ago.|from|0.025367384776473045|6|5|attention
+Kansas seized 350 pounds of leafy green plant material from a FedEx truck two years ago.|green|0.024875357747077942|6|5|attention
+Nine employees were inside the AB Specialty Silicones plant when the explosion occurred overnight.|[SEP]|0.2657378613948822|1|6|attention
+Nine employees were inside the AB Specialty Silicones plant when the explosion occurred overnight.|Silicones|0.11125701665878296|1|6|attention
+Nine employees were inside the AB Specialty Silicones plant when the explosion occurred overnight.|AB|0.061945319175720215|1|6|attention
+Nine employees were inside the AB Specialty Silicones plant when the explosion occurred overnight.|[CLS]|0.04325808957219124|1|6|attention
+Nine employees were inside the AB Specialty Silicones plant when the explosion occurred overnight.|when|0.039896149188280106|1|6|attention
+BMW CEO Harald Krueger said it is only considering a second plant in the U.S.|the|0.11502561718225479|1|7|attention
+BMW CEO Harald Krueger said it is only considering a second plant in the U.S.|in|0.0640232190489769|1|7|attention
+BMW CEO Harald Krueger said it is only considering a second plant in the U.S.|[CLS]|0.050534769892692566|1|7|attention
+BMW CEO Harald Krueger said it is only considering a second plant in the U.S.|second|0.03695085272192955|1|7|attention
+BMW CEO Harald Krueger said it is only considering a second plant in the U.S.|BMW|0.036882683634757996|1|7|attention
+Authorities have shut down the plant but local residents remain concerned about potential explosions.|[SEP]|0.3619261682033539|1|8|attention
+Authorities have shut down the plant but local residents remain concerned about potential explosions.|.|0.29489997029304504|1|8|attention
+Authorities have shut down the plant but local residents remain concerned about potential explosions.|[CLS]|0.04896700754761696|1|8|attention
+Authorities have shut down the plant but local residents remain concerned about potential explosions.|the|0.04345281049609184|1|8|attention
+Authorities have shut down the plant but local residents remain concerned about potential explosions.|explosions|0.03287691995501518|1|8|attention
+During Chad McIntosh's time as a Ford environmental exec, seeping chemicals contaminated groundwater near a company plant.|chemicals|0.13702492415905|1|9|attention
+During Chad McIntosh's time as a Ford environmental exec, seeping chemicals contaminated groundwater near a company plant.|company|0.06236624717712402|1|9|attention
+During Chad McIntosh's time as a Ford environmental exec, seeping chemicals contaminated groundwater near a company plant.|[CLS]|0.04385600611567497|1|9|attention
+During Chad McIntosh's time as a Ford environmental exec, seeping chemicals contaminated groundwater near a company plant.|a|0.04146873578429222|1|9|attention
+During Chad McIntosh's time as a Ford environmental exec, seeping chemicals contaminated groundwater near a company plant.|.|0.03838396072387695|1|9|attention
+“Fidelito” was previously the head of Cuba’s national nuclear program, and spearheaded the development of a nuclear plant on the Caribbean’s largest island.|spearheaded|0.13087521493434906|8|10|attention
+“Fidelito” was previously the head of Cuba’s national nuclear program, and spearheaded the development of a nuclear plant on the Caribbean’s largest island.|on|0.042047303169965744|8|10|attention
+“Fidelito” was previously the head of Cuba’s national nuclear program, and spearheaded the development of a nuclear plant on the Caribbean’s largest island.|the|0.03510561212897301|8|10|attention
+“Fidelito” was previously the head of Cuba’s national nuclear program, and spearheaded the development of a nuclear plant on the Caribbean’s largest island.|[CLS]|0.03188294172286987|8|10|attention
+“Fidelito” was previously the head of Cuba’s national nuclear program, and spearheaded the development of a nuclear plant on the Caribbean’s largest island.|development|0.026899004355072975|8|10|attention
+"The star said she believes she was accosted by a ""paid plant"" from Harvey Weinstein."|Harvey|0.058820854872465134|9|11|attention
+"The star said she believes she was accosted by a ""paid plant"" from Harvey Weinstein."|[CLS]|0.033200982958078384|9|11|attention
+"The star said she believes she was accosted by a ""paid plant"" from Harvey Weinstein."|Weinstein|0.03253185376524925|9|11|attention
+"The star said she believes she was accosted by a ""paid plant"" from Harvey Weinstein."|''|0.031053364276885986|9|11|attention
+"The star said she believes she was accosted by a ""paid plant"" from Harvey Weinstein."|said|0.02574499510228634|9|11|attention
+Construction on America’s largest wind power plant began last year in Oklahoma.|[SEP]|0.4263591766357422|8|12|attention
+Construction on America’s largest wind power plant began last year in Oklahoma.|.|0.20034939050674438|8|12|attention
+Construction on America’s largest wind power plant began last year in Oklahoma.|wind|0.06751426309347153|8|12|attention
+Construction on America’s largest wind power plant began last year in Oklahoma.|[CLS]|0.060835570096969604|8|12|attention
+Construction on America’s largest wind power plant began last year in Oklahoma.|power|0.03931153938174248|8|12|attention
+Our choice to follow a predominately meat diet or a predominately plant diet is not without consequence.|choice|0.039442047476768494|4|13|attention
+Our choice to follow a predominately meat diet or a predominately plant diet is not without consequence.|follow|0.027291283011436462|4|13|attention
+Our choice to follow a predominately meat diet or a predominately plant diet is not without consequence.|to|0.025314562022686005|4|13|attention
+Our choice to follow a predominately meat diet or a predominately plant diet is not without consequence.|Our|0.024357883259654045|4|13|attention
+Our choice to follow a predominately meat diet or a predominately plant diet is not without consequence.|[CLS]|0.021730581298470497|4|13|attention
+This morning a flooded chemical plant in Crosby, Texas, 20 miles from Houston, continues to burn, after explosions there|[SEP]|0.37424740195274353|9|14|attention
+This morning a flooded chemical plant in Crosby, Texas, 20 miles from Houston, continues to burn, after explosions there|,|0.23271846771240234|9|14|attention
+This morning a flooded chemical plant in Crosby, Texas, 20 miles from Houston, continues to burn, after explosions there|chemical|0.0764831081032753|9|14|attention
+This morning a flooded chemical plant in Crosby, Texas, 20 miles from Houston, continues to burn, after explosions there|[CLS]|0.02763420343399048|9|14|attention
+This morning a flooded chemical plant in Crosby, Texas, 20 miles from Houston, continues to burn, after explosions there|burn|0.026287071406841278|9|14|attention
+Earlier on Tuesday, the owner of the plant said the situation at its Crosby plant “has become serious.”|[SEP]|0.3191114366054535|1|15|attention
+Earlier on Tuesday, the owner of the plant said the situation at its Crosby plant “has become serious.”|.|0.20929282903671265|1|15|attention
+Earlier on Tuesday, the owner of the plant said the situation at its Crosby plant “has become serious.”|,|0.13213394582271576|1|15|attention
+Earlier on Tuesday, the owner of the plant said the situation at its Crosby plant “has become serious.”|[CLS]|0.04017694666981697|1|15|attention
+Earlier on Tuesday, the owner of the plant said the situation at its Crosby plant “has become serious.”|Crosby|0.026152243837714195|1|15|attention
+Earlier on Tuesday, the owner of the plant said the situation at its Crosby plant “has become serious.”|[SEP]|0.3212510347366333|1|16|attention
+Earlier on Tuesday, the owner of the plant said the situation at its Crosby plant “has become serious.”|.|0.19641607999801636|1|16|attention
+Earlier on Tuesday, the owner of the plant said the situation at its Crosby plant “has become serious.”|,|0.12505613267421722|1|16|attention
+Earlier on Tuesday, the owner of the plant said the situation at its Crosby plant “has become serious.”|[CLS]|0.0366358757019043|1|16|attention
+Earlier on Tuesday, the owner of the plant said the situation at its Crosby plant “has become serious.”|Crosby|0.030255982652306557|1|16|attention
+"The company says there likely will be ""additional incidents"" at the plant."|[SEP]|0.37529799342155457|1|17|attention
+"The company says there likely will be ""additional incidents"" at the plant."|.|0.2762819230556488|1|17|attention
+"The company says there likely will be ""additional incidents"" at the plant."|[CLS]|0.04806479811668396|1|17|attention
+"The company says there likely will be ""additional incidents"" at the plant."|the|0.03869091346859932|1|17|attention
+"The company says there likely will be ""additional incidents"" at the plant."|company|0.037416476756334305|1|17|attention
+Taiwanese electronics giant Foxconn said in the past it would build a plant in the U.S.|the|0.08237993717193604|1|18|attention
+Taiwanese electronics giant Foxconn said in the past it would build a plant in the U.S.|[CLS]|0.04019524157047272|1|18|attention
+Taiwanese electronics giant Foxconn said in the past it would build a plant in the U.S.|in|0.032848212867975235|1|18|attention
+Taiwanese electronics giant Foxconn said in the past it would build a plant in the U.S.|a|0.02887425571680069|1|18|attention
+Taiwanese electronics giant Foxconn said in the past it would build a plant in the U.S.|the|0.02715526707470417|1|18|attention
+I recently traveled to New Zealand to present my work and knowledge about the medical uses of the cannabis plant.|[SEP]|0.4168911278247833|3|19|attention
+I recently traveled to New Zealand to present my work and knowledge about the medical uses of the cannabis plant.|.|0.252538800239563|3|19|attention
+I recently traveled to New Zealand to present my work and knowledge about the medical uses of the cannabis plant.|cannabis|0.0812031552195549|3|19|attention
+I recently traveled to New Zealand to present my work and knowledge about the medical uses of the cannabis plant.|[CLS]|0.028975777328014374|3|19|attention
+I recently traveled to New Zealand to present my work and knowledge about the medical uses of the cannabis plant.|the|0.027077341452240944|3|19|attention
+A coal-fired power plant.|[CLS]|0.04799007251858711|5|20|attention
+A coal-fired power plant.|coal-fired|0.04425235092639923|5|20|attention
+A coal-fired power plant.|A|0.042320478707551956|5|20|attention
+A coal-fired power plant.|.|0.041745517402887344|5|20|attention
+A coal-fired power plant.|[SEP]|0.03794710710644722|5|20|attention
+The White House plans to scrap a rule on power plant emissions, kneecapping U.S. participation in the Paris climate accord.|climate|0.14695723354816437|8|21|attention
+The White House plans to scrap a rule on power plant emissions, kneecapping U.S. participation in the Paris climate accord.|the|0.10951170325279236|8|21|attention
+The White House plans to scrap a rule on power plant emissions, kneecapping U.S. participation in the Paris climate accord.|,|0.06578578054904938|8|21|attention
+The White House plans to scrap a rule on power plant emissions, kneecapping U.S. participation in the Paris climate accord.|emissions|0.05135023966431618|8|21|attention
+The White House plans to scrap a rule on power plant emissions, kneecapping U.S. participation in the Paris climate accord.|power|0.046903882175683975|8|21|attention
+Six years after the Fukushima nuclear power plant triple meltdown left Japan with a $235 billion clean-up bill, President|nuclear|0.059904616326093674|8|22|attention
+Six years after the Fukushima nuclear power plant triple meltdown left Japan with a $235 billion clean-up bill, President|triple|0.04112880304455757|8|22|attention
+Six years after the Fukushima nuclear power plant triple meltdown left Japan with a $235 billion clean-up bill, President|power|0.03769486024975777|8|22|attention
+Six years after the Fukushima nuclear power plant triple meltdown left Japan with a $235 billion clean-up bill, President|[CLS]|0.02991139143705368|8|22|attention
+Six years after the Fukushima nuclear power plant triple meltdown left Japan with a $235 billion clean-up bill, President|a|0.01631948910653591|8|22|attention
+GM said it makes its Cruze sedan in the United States and that all of those sold in the United States are made in a plant in Lordstown, Ohio.|.|0.10308460146188736|1|23|attention
+GM said it makes its Cruze sedan in the United States and that all of those sold in the United States are made in a plant in Lordstown, Ohio.|said|0.057927947491407394|1|23|attention
+GM said it makes its Cruze sedan in the United States and that all of those sold in the United States are made in a plant in Lordstown, Ohio.|in|0.05790672078728676|1|23|attention
+GM said it makes its Cruze sedan in the United States and that all of those sold in the United States are made in a plant in Lordstown, Ohio.|GM|0.038511473685503006|1|23|attention
+GM said it makes its Cruze sedan in the United States and that all of those sold in the United States are made in a plant in Lordstown, Ohio.|Lordstown|0.033485714346170425|1|23|attention
+The town’s main employer is the hog plant.|[SEP]|0.3421378433704376|9|24|attention
+The town’s main employer is the hog plant.|.|0.32254013419151306|9|24|attention
+The town’s main employer is the hog plant.|hog|0.065568707883358|9|24|attention
+The town’s main employer is the hog plant.|the|0.042432352900505066|9|24|attention
+The town’s main employer is the hog plant.|town|0.03592229261994362|9|24|attention
+President-elect Donald Trump has convinced air-conditioner-maker Carrier not to move an Indiana plant to Mexico.|to|0.08317036926746368|1|25|attention
+President-elect Donald Trump has convinced air-conditioner-maker Carrier not to move an Indiana plant to Mexico.|[CLS]|0.04188964143395424|1|25|attention
+President-elect Donald Trump has convinced air-conditioner-maker Carrier not to move an Indiana plant to Mexico.|an|0.032276540994644165|1|25|attention
+President-elect Donald Trump has convinced air-conditioner-maker Carrier not to move an Indiana plant to Mexico.|move|0.031051866710186005|1|25|attention
+President-elect Donald Trump has convinced air-conditioner-maker Carrier not to move an Indiana plant to Mexico.|not|0.024937434121966362|1|25|attention
+Those who use and study the plant say an outright ban could do serious harm.|[SEP]|0.4570658206939697|9|26|attention
+Those who use and study the plant say an outright ban could do serious harm.|.|0.2318485528230667|9|26|attention
+Those who use and study the plant say an outright ban could do serious harm.|[CLS]|0.04167095944285393|9|26|attention
+Those who use and study the plant say an outright ban could do serious harm.|the|0.04077369347214699|9|26|attention
+Those who use and study the plant say an outright ban could do serious harm.|ban|0.0354553759098053|9|26|attention
+The company had never said it would close the Kentucky assembly plant.|[SEP]|0.3487192392349243|1|27|attention
+The company had never said it would close the Kentucky assembly plant.|.|0.24780809879302979|1|27|attention
+The company had never said it would close the Kentucky assembly plant.|assembly|0.08930429071187973|1|27|attention
+The company had never said it would close the Kentucky assembly plant.|[CLS]|0.056742388755083084|1|27|attention
+The company had never said it would close the Kentucky assembly plant.|the|0.04052062705159187|1|27|attention
+Even as more states move to legalize the plant, America's young people are using less and less of it.|,|0.12300356477499008|9|28|attention
+Even as more states move to legalize the plant, America's young people are using less and less of it.|America|0.116274893283844|9|28|attention
+Even as more states move to legalize the plant, America's young people are using less and less of it.|[CLS]|0.04486507549881935|9|28|attention
+Even as more states move to legalize the plant, America's young people are using less and less of it.|legalize|0.03141763433814049|9|28|attention
+Even as more states move to legalize the plant, America's young people are using less and less of it.|[SEP]|0.02974414825439453|9|28|attention
+Tribal leaders in Oklahoma have vowed to plant nectar-producing plants for the butterflies whose numbers have dwindled.|the|0.041306741535663605|2|29|attention
+Tribal leaders in Oklahoma have vowed to plant nectar-producing plants for the butterflies whose numbers have dwindled.|[CLS]|0.030853940173983574|2|29|attention
+Tribal leaders in Oklahoma have vowed to plant nectar-producing plants for the butterflies whose numbers have dwindled.|vowed|0.023169079795479774|2|29|attention
+Tribal leaders in Oklahoma have vowed to plant nectar-producing plants for the butterflies whose numbers have dwindled.|nectar-producing|0.02204221300780773|2|29|attention
+Tribal leaders in Oklahoma have vowed to plant nectar-producing plants for the butterflies whose numbers have dwindled.|butterflies|0.021987184882164|2|29|attention
+But I've got a special packet of seeds to plant this week, and they've inspired me to be more attentive this year.|'ve|0.08865778893232346|2|30|attention
+But I've got a special packet of seeds to plant this week, and they've inspired me to be more attentive this year.|inspired|0.0818631574511528|2|30|attention
+But I've got a special packet of seeds to plant this week, and they've inspired me to be more attentive this year.|and|0.07918349653482437|2|30|attention
+But I've got a special packet of seeds to plant this week, and they've inspired me to be more attentive this year.|week|0.04179837182164192|2|30|attention
+But I've got a special packet of seeds to plant this week, and they've inspired me to be more attentive this year.|,|0.0238895732909441|2|30|attention
+Fears of ISIS' nuclear ambitions have grown since a suspect linked to the November terrorist attacks in Paris was found with a surveillance video of a Belgian nuclear power plant official.|[SEP]|0.3952989876270294|8|31|attention
+Fears of ISIS' nuclear ambitions have grown since a suspect linked to the November terrorist attacks in Paris was found with a surveillance video of a Belgian nuclear power plant official.|.|0.2406519204378128|8|31|attention
+Fears of ISIS' nuclear ambitions have grown since a suspect linked to the November terrorist attacks in Paris was found with a surveillance video of a Belgian nuclear power plant official.|nuclear|0.04978252574801445|8|31|attention
+Fears of ISIS' nuclear ambitions have grown since a suspect linked to the November terrorist attacks in Paris was found with a surveillance video of a Belgian nuclear power plant official.|power|0.041159775108098984|8|31|attention
+Fears of ISIS' nuclear ambitions have grown since a suspect linked to the November terrorist attacks in Paris was found with a surveillance video of a Belgian nuclear power plant official.|official|0.034782297909259796|8|31|attention
+I met Larsen on her coffee break outside head office, across the street from Norway’s only coalfired power plant.|power|0.06497332453727722|8|32|attention
+I met Larsen on her coffee break outside head office, across the street from Norway’s only coalfired power plant.|.|0.05139787867665291|8|32|attention
+I met Larsen on her coffee break outside head office, across the street from Norway’s only coalfired power plant.|Norway|0.04664622247219086|8|32|attention
+I met Larsen on her coffee break outside head office, across the street from Norway’s only coalfired power plant.|coalfired|0.03875824809074402|8|32|attention
+I met Larsen on her coffee break outside head office, across the street from Norway’s only coalfired power plant.|[SEP]|0.03376832231879234|8|32|attention
+Radioactive water leaked into the groundwater at the upstate Indian Point nuclear power plant, officials said Saturday.|[SEP]|0.4445206820964813|8|33|attention
+Radioactive water leaked into the groundwater at the upstate Indian Point nuclear power plant, officials said Saturday.|.|0.18026535212993622|8|33|attention
+Radioactive water leaked into the groundwater at the upstate Indian Point nuclear power plant, officials said Saturday.|nuclear|0.07578336447477341|8|33|attention
+Radioactive water leaked into the groundwater at the upstate Indian Point nuclear power plant, officials said Saturday.|power|0.04111262038350105|8|33|attention
+Radioactive water leaked into the groundwater at the upstate Indian Point nuclear power plant, officials said Saturday.|at|0.023659372702240944|8|33|attention
+Now it's even more pathetic if you can't keep your desk plant alive.|keep|0.16483530402183533|9|34|attention
+Now it's even more pathetic if you can't keep your desk plant alive.|ca|0.059116583317518234|9|34|attention
+Now it's even more pathetic if you can't keep your desk plant alive.|alive|0.03755372762680054|9|34|attention
+Now it's even more pathetic if you can't keep your desk plant alive.|[CLS]|0.03622811660170555|9|34|attention
+Now it's even more pathetic if you can't keep your desk plant alive.|.|0.032870400696992874|9|34|attention
+ABUJA, Nigeria (AP) — A gas tanker truck ignited an inferno at a crowded industrial gas plant in Nigeria on Thursday, killing|—|0.19957329332828522|9|35|attention
+ABUJA, Nigeria (AP) — A gas tanker truck ignited an inferno at a crowded industrial gas plant in Nigeria on Thursday, killing|killing|0.12080257385969162|9|35|attention
+ABUJA, Nigeria (AP) — A gas tanker truck ignited an inferno at a crowded industrial gas plant in Nigeria on Thursday, killing|in|0.02527853101491928|9|35|attention
+ABUJA, Nigeria (AP) — A gas tanker truck ignited an inferno at a crowded industrial gas plant in Nigeria on Thursday, killing|[CLS]|0.024600917473435402|9|35|attention
+ABUJA, Nigeria (AP) — A gas tanker truck ignited an inferno at a crowded industrial gas plant in Nigeria on Thursday, killing|gas|0.019071821123361588|9|35|attention
+Trib Total Media will cut 14 percent of its workforce, consolidate its largest daily newspapers, close a printing plant in|[SEP]|0.03263645991683006|9|36|attention
+Trib Total Media will cut 14 percent of its workforce, consolidate its largest daily newspapers, close a printing plant in|,|0.03145955875515938|9|36|attention
+Trib Total Media will cut 14 percent of its workforce, consolidate its largest daily newspapers, close a printing plant in|will|0.03100339137017727|9|36|attention
+Trib Total Media will cut 14 percent of its workforce, consolidate its largest daily newspapers, close a printing plant in|[CLS]|0.029050776734948158|9|36|attention
+Trib Total Media will cut 14 percent of its workforce, consolidate its largest daily newspapers, close a printing plant in|in|0.024320749565958977|9|36|attention
+"An old Chinese proverb says, ""The best time to plant a tree is 20 years ago."|[SEP]|0.14599089324474335|2|37|attention
+"An old Chinese proverb says, ""The best time to plant a tree is 20 years ago."|a|0.0901033952832222|2|37|attention
+"An old Chinese proverb says, ""The best time to plant a tree is 20 years ago."|.|0.03584844246506691|2|37|attention
+"An old Chinese proverb says, ""The best time to plant a tree is 20 years ago."|is|0.02826429158449173|2|37|attention
+"An old Chinese proverb says, ""The best time to plant a tree is 20 years ago."|time|0.026647798717021942|2|37|attention
+New limits would cut power plant emissions 32 percent by 2030.|[SEP]|0.18412940204143524|8|38|attention
+New limits would cut power plant emissions 32 percent by 2030.|power|0.08841497451066971|8|38|attention
+New limits would cut power plant emissions 32 percent by 2030.|[CLS]|0.062020767480134964|8|38|attention
+New limits would cut power plant emissions 32 percent by 2030.|emissions|0.05240518972277641|8|38|attention
+New limits would cut power plant emissions 32 percent by 2030.|would|0.025486880913376808|8|38|attention
+Researchers have found evidence of plant cultivation at a 23,000-year-old site.|site|0.11888975650072098|6|39|attention
+Researchers have found evidence of plant cultivation at a 23,000-year-old site.|cultivation|0.041258107870817184|6|39|attention
+Researchers have found evidence of plant cultivation at a 23,000-year-old site.|[CLS]|0.041061799973249435|6|39|attention
+Researchers have found evidence of plant cultivation at a 23,000-year-old site.|of|0.01607087068259716|6|39|attention
+Researchers have found evidence of plant cultivation at a 23,000-year-old site.|at|0.015927890315651894|6|39|attention
+The announcement marks the 200th planned coal plant closure in the Sierra Club's Beyond Coal campaign.|closure|0.04548144340515137|8|40|attention
+The announcement marks the 200th planned coal plant closure in the Sierra Club's Beyond Coal campaign.|.|0.044450175017118454|8|40|attention
+The announcement marks the 200th planned coal plant closure in the Sierra Club's Beyond Coal campaign.|[CLS]|0.035249557346105576|8|40|attention
+The announcement marks the 200th planned coal plant closure in the Sierra Club's Beyond Coal campaign.|Club|0.030766261741518974|8|40|attention
+The announcement marks the 200th planned coal plant closure in the Sierra Club's Beyond Coal campaign.|in|0.023602329194545746|8|40|attention
+For the record, chicory is this pretty flowering plant.|,|0.16814623773097992|3|41|attention
+For the record, chicory is this pretty flowering plant.|[SEP]|0.163723886013031|3|41|attention
+For the record, chicory is this pretty flowering plant.|.|0.04943804070353508|3|41|attention
+For the record, chicory is this pretty flowering plant.|flowering|0.04324311017990112|3|41|attention
+For the record, chicory is this pretty flowering plant.|pretty|0.040018804371356964|3|41|attention
+Emily surprised me with a new plant on my birthday.|[SEP]|0.4894521236419678|6|42|attention
+Emily surprised me with a new plant on my birthday.|.|0.18950395286083221|6|42|attention
+Emily surprised me with a new plant on my birthday.|[CLS]|0.0504361130297184|6|42|attention
+Emily surprised me with a new plant on my birthday.|new|0.027765778824687004|6|42|attention
+Emily surprised me with a new plant on my birthday.|a|0.025315672159194946|6|42|attention
+Urbex and photographer Iain Bolton offer us a haunting glimpse into the town of Pripyat, the nuclear city established in February of 1970 to support a nearby power plant you might have heard of...|established|0.11651163548231125|8|43|attention
+Urbex and photographer Iain Bolton offer us a haunting glimpse into the town of Pripyat, the nuclear city established in February of 1970 to support a nearby power plant you might have heard of...|February|0.06197087839245796|8|43|attention
+Urbex and photographer Iain Bolton offer us a haunting glimpse into the town of Pripyat, the nuclear city established in February of 1970 to support a nearby power plant you might have heard of...|have|0.030149510130286217|8|43|attention
+Urbex and photographer Iain Bolton offer us a haunting glimpse into the town of Pripyat, the nuclear city established in February of 1970 to support a nearby power plant you might have heard of...|heard|0.025921398773789406|8|43|attention
+Urbex and photographer Iain Bolton offer us a haunting glimpse into the town of Pripyat, the nuclear city established in February of 1970 to support a nearby power plant you might have heard of...|power|0.02395814098417759|8|43|attention
+We decided to conduct an experiment where he would plant a very bold Hollywood-style kiss on me when he arrived home for dinner.|me|0.04942166432738304|2|44|attention
+We decided to conduct an experiment where he would plant a very bold Hollywood-style kiss on me when he arrived home for dinner.|bold|0.031039046123623848|2|44|attention
+We decided to conduct an experiment where he would plant a very bold Hollywood-style kiss on me when he arrived home for dinner.|[CLS]|0.025097468867897987|2|44|attention
+We decided to conduct an experiment where he would plant a very bold Hollywood-style kiss on me when he arrived home for dinner.|he|0.02040177769958973|2|44|attention
+We decided to conduct an experiment where he would plant a very bold Hollywood-style kiss on me when he arrived home for dinner.|Hollywood-style|0.02030882239341736|2|44|attention
+We are used to thinking of infrastructure as buildings, plant and machinery.|[SEP]|0.45162561535835266|9|45|attention
+We are used to thinking of infrastructure as buildings, plant and machinery.|.|0.2300082892179489|9|45|attention
+We are used to thinking of infrastructure as buildings, plant and machinery.|infrastructure|0.05667269229888916|9|45|attention
+We are used to thinking of infrastructure as buildings, plant and machinery.|machinery|0.039685387164354324|9|45|attention
+We are used to thinking of infrastructure as buildings, plant and machinery.|,|0.029362445697188377|9|45|attention
+While the first harvest is entirely lost, the hope is that farmers can plant again before the rains stop altogether so that there is hope of having some food to harvest this year.|[SEP]|0.3282022178173065|2|46|attention
+While the first harvest is entirely lost, the hope is that farmers can plant again before the rains stop altogether so that there is hope of having some food to harvest this year.|.|0.19926299154758453|2|46|attention
+While the first harvest is entirely lost, the hope is that farmers can plant again before the rains stop altogether so that there is hope of having some food to harvest this year.|,|0.11932186037302017|2|46|attention
+While the first harvest is entirely lost, the hope is that farmers can plant again before the rains stop altogether so that there is hope of having some food to harvest this year.|farmers|0.03475606068968773|2|46|attention
+While the first harvest is entirely lost, the hope is that farmers can plant again before the rains stop altogether so that there is hope of having some food to harvest this year.|[CLS]|0.0284887682646513|2|46|attention
+We've deprived countless patients from a helpful medicinal plant.|[SEP]|0.21410317718982697|3|47|attention
+We've deprived countless patients from a helpful medicinal plant.|[CLS]|0.052134085446596146|3|47|attention
+We've deprived countless patients from a helpful medicinal plant.|.|0.04359917715191841|3|47|attention
+We've deprived countless patients from a helpful medicinal plant.|from|0.03447972238063812|3|47|attention
+We've deprived countless patients from a helpful medicinal plant.|medicinal|0.02827768586575985|3|47|attention
+Worrying only leads to more worrying, so instead of allowing anxieties to plant themselves in my mind, I replaced them with more positive things.|,|0.11053850501775742|2|48|attention
+Worrying only leads to more worrying, so instead of allowing anxieties to plant themselves in my mind, I replaced them with more positive things.|replaced|0.10201818495988846|2|48|attention
+Worrying only leads to more worrying, so instead of allowing anxieties to plant themselves in my mind, I replaced them with more positive things.|to|0.037282079458236694|2|48|attention
+Worrying only leads to more worrying, so instead of allowing anxieties to plant themselves in my mind, I replaced them with more positive things.|I|0.03369278088212013|2|48|attention
+Worrying only leads to more worrying, so instead of allowing anxieties to plant themselves in my mind, I replaced them with more positive things.|more|0.033546533435583115|2|48|attention
+Do you ever think about what the people are like at each step of the production: the cultivators of the fields, the owners of the land, the processing plant workers, the packaging designers, the marketing team, the distributors, the transporters, the wholesalers, the retailers, and ultimately you, the consumer?|,|0.12741899490356445|9|49|attention
+Do you ever think about what the people are like at each step of the production: the cultivators of the fields, the owners of the land, the processing plant workers, the packaging designers, the marketing team, the distributors, the transporters, the wholesalers, the retailers, and ultimately you, the consumer?|people|0.02898513525724411|9|49|attention
+Do you ever think about what the people are like at each step of the production: the cultivators of the fields, the owners of the land, the processing plant workers, the packaging designers, the marketing team, the distributors, the transporters, the wholesalers, the retailers, and ultimately you, the consumer?|the|0.02489963173866272|9|49|attention
+Do you ever think about what the people are like at each step of the production: the cultivators of the fields, the owners of the land, the processing plant workers, the packaging designers, the marketing team, the distributors, the transporters, the wholesalers, the retailers, and ultimately you, the consumer?|production|0.020214198157191277|9|49|attention
+Do you ever think about what the people are like at each step of the production: the cultivators of the fields, the owners of the land, the processing plant workers, the packaging designers, the marketing team, the distributors, the transporters, the wholesalers, the retailers, and ultimately you, the consumer?|the|0.019141100347042084|9|49|attention
+As I type this now, my desk is fringed with a little Peruvian apple cactus, a spider plant, a milk cactus and a big, hardy jade plant.|[SEP]|0.20687134563922882|6|50|attention
+As I type this now, my desk is fringed with a little Peruvian apple cactus, a spider plant, a milk cactus and a big, hardy jade plant.|,|0.13296036422252655|6|50|attention
+As I type this now, my desk is fringed with a little Peruvian apple cactus, a spider plant, a milk cactus and a big, hardy jade plant.|apple|0.021275823935866356|6|50|attention
+As I type this now, my desk is fringed with a little Peruvian apple cactus, a spider plant, a milk cactus and a big, hardy jade plant.|[CLS]|0.02048826962709427|6|50|attention
+As I type this now, my desk is fringed with a little Peruvian apple cactus, a spider plant, a milk cactus and a big, hardy jade plant.|and|0.015331040136516094|6|50|attention
+As I type this now, my desk is fringed with a little Peruvian apple cactus, a spider plant, a milk cactus and a big, hardy jade plant.|[SEP]|0.1855974793434143|6|51|attention
+As I type this now, my desk is fringed with a little Peruvian apple cactus, a spider plant, a milk cactus and a big, hardy jade plant.|,|0.12140048295259476|6|51|attention
+As I type this now, my desk is fringed with a little Peruvian apple cactus, a spider plant, a milk cactus and a big, hardy jade plant.|[CLS]|0.032128553837537766|6|51|attention
+As I type this now, my desk is fringed with a little Peruvian apple cactus, a spider plant, a milk cactus and a big, hardy jade plant.|apple|0.023796694353222847|6|51|attention
+As I type this now, my desk is fringed with a little Peruvian apple cactus, a spider plant, a milk cactus and a big, hardy jade plant.|.|0.0203778687864542|6|51|attention
+She didn't study agriculture at her university, Georgia State, and until a few years ago, the only plant she may have envisioned herself cultivating was basil.|n't|0.12236205488443375|6|52|attention
+She didn't study agriculture at her university, Georgia State, and until a few years ago, the only plant she may have envisioned herself cultivating was basil.|and|0.088589608669281|6|52|attention
+She didn't study agriculture at her university, Georgia State, and until a few years ago, the only plant she may have envisioned herself cultivating was basil.|the|0.05739744007587433|6|52|attention
+She didn't study agriculture at her university, Georgia State, and until a few years ago, the only plant she may have envisioned herself cultivating was basil.|a|0.03746954724192619|6|52|attention
+She didn't study agriculture at her university, Georgia State, and until a few years ago, the only plant she may have envisioned herself cultivating was basil.|[SEP]|0.033637985587120056|6|52|attention
+I really need to plant those, I thought.|[SEP]|0.42202404141426086|2|53|attention
+I really need to plant those, I thought.|.|0.26217520236968994|2|53|attention
+I really need to plant those, I thought.|those|0.053429532796144485|2|53|attention
+I really need to plant those, I thought.|[CLS]|0.0414210669696331|2|53|attention
+I really need to plant those, I thought.|to|0.025244073942303658|2|53|attention
+It's time to plant a garden.|[SEP]|0.22375114262104034|2|54|attention
+It's time to plant a garden.|[CLS]|0.08299010246992111|2|54|attention
+It's time to plant a garden.|to|0.05887005850672722|2|54|attention
+It's time to plant a garden.|a|0.053664181381464005|2|54|attention
+It's time to plant a garden.|.|0.04251883551478386|2|54|attention
+If you have one, maybe you could help others plant their own.|[SEP]|0.3374445140361786|2|55|attention
+If you have one, maybe you could help others plant their own.|.|0.17300470173358917|2|55|attention
+If you have one, maybe you could help others plant their own.|,|0.11384040117263794|2|55|attention
+If you have one, maybe you could help others plant their own.|own|0.04383080080151558|2|55|attention
+If you have one, maybe you could help others plant their own.|[CLS]|0.03185573220252991|2|55|attention
+We manage family, work, friends, living spaces, school, exercise, cooking, coupon cutting, plant watering, voicemail listening, gas pumping and ALL of the other life things that we jam pack into each and every single day.|manage|0.03955109044909477|2|56|attention
+We manage family, work, friends, living spaces, school, exercise, cooking, coupon cutting, plant watering, voicemail listening, gas pumping and ALL of the other life things that we jam pack into each and every single day.|[CLS]|0.029540851712226868|2|56|attention
+We manage family, work, friends, living spaces, school, exercise, cooking, coupon cutting, plant watering, voicemail listening, gas pumping and ALL of the other life things that we jam pack into each and every single day.|gas|0.027742205187678337|2|56|attention
+We manage family, work, friends, living spaces, school, exercise, cooking, coupon cutting, plant watering, voicemail listening, gas pumping and ALL of the other life things that we jam pack into each and every single day.|voicemail|0.02672017551958561|2|56|attention
+We manage family, work, friends, living spaces, school, exercise, cooking, coupon cutting, plant watering, voicemail listening, gas pumping and ALL of the other life things that we jam pack into each and every single day.|pumping|0.021373584866523743|2|56|attention
+Study his hands as he'd loosen marigolds from plastic, plant and cover their roots with a swift hand.|'d|0.23338256776332855|2|57|attention
+Study his hands as he'd loosen marigolds from plastic, plant and cover their roots with a swift hand.|and|0.039441436529159546|2|57|attention
+Study his hands as he'd loosen marigolds from plastic, plant and cover their roots with a swift hand.|marigolds|0.032563719898462296|2|57|attention
+Study his hands as he'd loosen marigolds from plastic, plant and cover their roots with a swift hand.|plastic|0.02019890397787094|2|57|attention
+Study his hands as he'd loosen marigolds from plastic, plant and cover their roots with a swift hand.|roots|0.016729332506656647|2|57|attention
+Ironically, this is the first time I've toured this particular auto-assembly plant (which was first owned by General Motors; then by NUMMI, a joint venture between GM and Toyota; and now by Tesla), even though much of my understanding of innovation and sustainability comes from bird-dogging the evolution of this building over the years.|'ve|0.10343271493911743|9|58|attention
+Ironically, this is the first time I've toured this particular auto-assembly plant (which was first owned by General Motors; then by NUMMI, a joint venture between GM and Toyota; and now by Tesla), even though much of my understanding of innovation and sustainability comes from bird-dogging the evolution of this building over the years.|my|0.06830748915672302|9|58|attention
+Ironically, this is the first time I've toured this particular auto-assembly plant (which was first owned by General Motors; then by NUMMI, a joint venture between GM and Toyota; and now by Tesla), even though much of my understanding of innovation and sustainability comes from bird-dogging the evolution of this building over the years.|,|0.037850040942430496|9|58|attention
+Ironically, this is the first time I've toured this particular auto-assembly plant (which was first owned by General Motors; then by NUMMI, a joint venture between GM and Toyota; and now by Tesla), even though much of my understanding of innovation and sustainability comes from bird-dogging the evolution of this building over the years.|which|0.028411148115992546|9|58|attention
+Ironically, this is the first time I've toured this particular auto-assembly plant (which was first owned by General Motors; then by NUMMI, a joint venture between GM and Toyota; and now by Tesla), even though much of my understanding of innovation and sustainability comes from bird-dogging the evolution of this building over the years.|was|0.025157295167446136|9|58|attention
+There's the renewal that's visible with each plant and tree, each blossom or new leaf.|that|0.05083340033888817|0|59|attention
+There's the renewal that's visible with each plant and tree, each blossom or new leaf.|and|0.048829514533281326|0|59|attention
+There's the renewal that's visible with each plant and tree, each blossom or new leaf.|or|0.03291973099112511|0|59|attention
+There's the renewal that's visible with each plant and tree, each blossom or new leaf.|[CLS]|0.03217744082212448|0|59|attention
+There's the renewal that's visible with each plant and tree, each blossom or new leaf.|each|0.024069705978035927|0|59|attention
+There are gardens to plant, closets to clean and clothing to swap.|[SEP]|0.25512492656707764|2|60|attention
+There are gardens to plant, closets to clean and clothing to swap.|gardens|0.053948912769556046|2|60|attention
+There are gardens to plant, closets to clean and clothing to swap.|[CLS]|0.04342963173985481|2|60|attention
+There are gardens to plant, closets to clean and clothing to swap.|are|0.019609784707427025|2|60|attention
+There are gardens to plant, closets to clean and clothing to swap.|to|0.01734977774322033|2|60|attention
+The recent decision by Intel to close its microprocessor assembly plant in Costa Rica has caused quite a storm over the past few weeks, in some ways souring the jubilant electoral victory of Luis Guillermo Solís of the PAC, which took place just 48 hours before the US tech giant's announcement|before|0.1108914241194725|1|61|attention
+The recent decision by Intel to close its microprocessor assembly plant in Costa Rica has caused quite a storm over the past few weeks, in some ways souring the jubilant electoral victory of Luis Guillermo Solís of the PAC, which took place just 48 hours before the US tech giant's announcement|ways|0.08292630314826965|1|61|attention
+The recent decision by Intel to close its microprocessor assembly plant in Costa Rica has caused quite a storm over the past few weeks, in some ways souring the jubilant electoral victory of Luis Guillermo Solís of the PAC, which took place just 48 hours before the US tech giant's announcement|in|0.046748679131269455|1|61|attention
+The recent decision by Intel to close its microprocessor assembly plant in Costa Rica has caused quite a storm over the past few weeks, in some ways souring the jubilant electoral victory of Luis Guillermo Solís of the PAC, which took place just 48 hours before the US tech giant's announcement|Intel|0.04415666684508324|1|61|attention
+The recent decision by Intel to close its microprocessor assembly plant in Costa Rica has caused quite a storm over the past few weeks, in some ways souring the jubilant electoral victory of Luis Guillermo Solís of the PAC, which took place just 48 hours before the US tech giant's announcement|[CLS]|0.02348860166966915|1|61|attention
+Like pruning a plant of dying branches, periodically pruning your business of troublesome clients is a necessity.|a|0.037750400602817535|3|62|attention
+Like pruning a plant of dying branches, periodically pruning your business of troublesome clients is a necessity.|of|0.037615757435560226|3|62|attention
+Like pruning a plant of dying branches, periodically pruning your business of troublesome clients is a necessity.|clients|0.036937180906534195|3|62|attention
+Like pruning a plant of dying branches, periodically pruning your business of troublesome clients is a necessity.|[CLS]|0.03189199045300484|3|62|attention
+Like pruning a plant of dying branches, periodically pruning your business of troublesome clients is a necessity.|troublesome|0.03188279643654823|3|62|attention
+"The plant, fortunately, is ""zero-odor"" facility because all of the processing is contained."|,|0.13878215849399567|9|63|attention
+"The plant, fortunately, is ""zero-odor"" facility because all of the processing is contained."|contained|0.05000662803649902|9|63|attention
+"The plant, fortunately, is ""zero-odor"" facility because all of the processing is contained."|[CLS]|0.042307864874601364|9|63|attention
+"The plant, fortunately, is ""zero-odor"" facility because all of the processing is contained."|The|0.028813883662223816|9|63|attention
+"The plant, fortunately, is ""zero-odor"" facility because all of the processing is contained."|facility|0.0257948637008667|9|63|attention
+"You see, it's their ""phytonutrients,"" or plant nutrients, that help us fight disease and stay stronger for longer."|and|0.1457347571849823|4|64|attention
+"You see, it's their ""phytonutrients,"" or plant nutrients, that help us fight disease and stay stronger for longer."|nutrients|0.04516606032848358|4|64|attention
+"You see, it's their ""phytonutrients,"" or plant nutrients, that help us fight disease and stay stronger for longer."|disease|0.021566802635788918|4|64|attention
+"You see, it's their ""phytonutrients,"" or plant nutrients, that help us fight disease and stay stronger for longer."|[CLS]|0.018192358314990997|4|64|attention
+"You see, it's their ""phytonutrients,"" or plant nutrients, that help us fight disease and stay stronger for longer."|,|0.014821252785623074|4|64|attention
+The funny thing is, the rate-limiting issue makes the plant vs. animal nutrition debate irrelevant.|debate|0.1401747614145279|4|65|attention
+The funny thing is, the rate-limiting issue makes the plant vs. animal nutrition debate irrelevant.|[CLS]|0.05580516159534454|4|65|attention
+The funny thing is, the rate-limiting issue makes the plant vs. animal nutrition debate irrelevant.|funny|0.030042698606848717|4|65|attention
+The funny thing is, the rate-limiting issue makes the plant vs. animal nutrition debate irrelevant.|the|0.029335809871554375|4|65|attention
+The funny thing is, the rate-limiting issue makes the plant vs. animal nutrition debate irrelevant.|is|0.027540134266018867|4|65|attention
+"An old proverb says, ""The best time to plant a tree is 20 years ago."|[SEP]|0.15338358283042908|2|66|attention
+"An old proverb says, ""The best time to plant a tree is 20 years ago."|a|0.09152903407812119|2|66|attention
+"An old proverb says, ""The best time to plant a tree is 20 years ago."|.|0.039552051573991776|2|66|attention
+"An old proverb says, ""The best time to plant a tree is 20 years ago."|is|0.028511473909020424|2|66|attention
+"An old proverb says, ""The best time to plant a tree is 20 years ago."|time|0.027082068845629692|2|66|attention
+My passport is like the blood-sucking, voracious plant from Little Shop Of Horrors -- the more I feed it, the hungrier it gets.|.|0.12699788808822632|3|67|attention
+My passport is like the blood-sucking, voracious plant from Little Shop Of Horrors -- the more I feed it, the hungrier it gets.|[CLS]|0.028416963294148445|3|67|attention
+My passport is like the blood-sucking, voracious plant from Little Shop Of Horrors -- the more I feed it, the hungrier it gets.|My|0.02720128931105137|3|67|attention
+My passport is like the blood-sucking, voracious plant from Little Shop Of Horrors -- the more I feed it, the hungrier it gets.|voracious|0.026558613404631615|3|67|attention
+My passport is like the blood-sucking, voracious plant from Little Shop Of Horrors -- the more I feed it, the hungrier it gets.|feed|0.02430208958685398|3|67|attention
+"I've only been bitten by the ""plant bug"" recently in the last few years, but it's been really fun discovering and learning"|but|0.1607273370027542|3|68|attention
+"I've only been bitten by the ""plant bug"" recently in the last few years, but it's been really fun discovering and learning"|'ve|0.12940378487110138|3|68|attention
+"I've only been bitten by the ""plant bug"" recently in the last few years, but it's been really fun discovering and learning"|''|0.05890301987528801|3|68|attention
+"I've only been bitten by the ""plant bug"" recently in the last few years, but it's been really fun discovering and learning"|recently|0.05189533159136772|3|68|attention
+"I've only been bitten by the ""plant bug"" recently in the last few years, but it's been really fun discovering and learning"|``|0.033204805105924606|3|68|attention
+You won't be called on if you plant yourself in the front, and it's the best spot to see the teacher.|n't|0.15388335287570953|2|69|attention
+You won't be called on if you plant yourself in the front, and it's the best spot to see the teacher.|and|0.07698532938957214|2|69|attention
+You won't be called on if you plant yourself in the front, and it's the best spot to see the teacher.|You|0.06022600829601288|2|69|attention
+You won't be called on if you plant yourself in the front, and it's the best spot to see the teacher.|yourself|0.03707036375999451|2|69|attention
+You won't be called on if you plant yourself in the front, and it's the best spot to see the teacher.|[CLS]|0.03357826545834541|2|69|attention
+Great Blue Hole The Five Flower Lake in Jiuzhaigou Valley, China gets its beautiful colors from plant and mineral deposits|beautiful|0.12386622279882431|0|70|attention
+Great Blue Hole The Five Flower Lake in Jiuzhaigou Valley, China gets its beautiful colors from plant and mineral deposits|Lake|0.05446934327483177|0|70|attention
+Great Blue Hole The Five Flower Lake in Jiuzhaigou Valley, China gets its beautiful colors from plant and mineral deposits|from|0.05151696503162384|0|70|attention
+Great Blue Hole The Five Flower Lake in Jiuzhaigou Valley, China gets its beautiful colors from plant and mineral deposits|mineral|0.043725401163101196|0|70|attention
+Great Blue Hole The Five Flower Lake in Jiuzhaigou Valley, China gets its beautiful colors from plant and mineral deposits|[CLS]|0.040558841079473495|0|70|attention
+"A fire Sept. 24 at the Gabila's plant in Copiague, Long Island, damaged the machinery that makes the company's biggest seller -- ""The Original Coney Island Square Knish."""|machinery|0.10482916980981827|1|71|attention
+"A fire Sept. 24 at the Gabila's plant in Copiague, Long Island, damaged the machinery that makes the company's biggest seller -- ""The Original Coney Island Square Knish."""|in|0.03743360936641693|1|71|attention
+"A fire Sept. 24 at the Gabila's plant in Copiague, Long Island, damaged the machinery that makes the company's biggest seller -- ""The Original Coney Island Square Knish."""|[CLS]|0.037410978227853775|1|71|attention
+"A fire Sept. 24 at the Gabila's plant in Copiague, Long Island, damaged the machinery that makes the company's biggest seller -- ""The Original Coney Island Square Knish."""|'s|0.02176041156053543|1|71|attention
+"A fire Sept. 24 at the Gabila's plant in Copiague, Long Island, damaged the machinery that makes the company's biggest seller -- ""The Original Coney Island Square Knish."""|Gabila|0.01516795251518488|1|71|attention
+Apples contain cell protective plant chemicals called flavonoids, which act as antioxidants by scavenging free radicals that are destructive to your genes and by supporting normal inflammation control.|as|0.13767479360103607|4|72|attention
+Apples contain cell protective plant chemicals called flavonoids, which act as antioxidants by scavenging free radicals that are destructive to your genes and by supporting normal inflammation control.|Apples|0.04965956509113312|4|72|attention
+Apples contain cell protective plant chemicals called flavonoids, which act as antioxidants by scavenging free radicals that are destructive to your genes and by supporting normal inflammation control.|[CLS]|0.03350842371582985|4|72|attention
+Apples contain cell protective plant chemicals called flavonoids, which act as antioxidants by scavenging free radicals that are destructive to your genes and by supporting normal inflammation control.|.|0.016346096992492676|4|72|attention
+Apples contain cell protective plant chemicals called flavonoids, which act as antioxidants by scavenging free radicals that are destructive to your genes and by supporting normal inflammation control.|cell|0.01356233935803175|4|72|attention
+Anemone Aspen Marigolds are a great fall-blooming plant, primarily in orange, gold and yellow -- probably why they were chosen|yellow|0.11641442775726318|3|73|attention
+Anemone Aspen Marigolds are a great fall-blooming plant, primarily in orange, gold and yellow -- probably why they were chosen|[CLS]|0.05404694005846977|3|73|attention
+Anemone Aspen Marigolds are a great fall-blooming plant, primarily in orange, gold and yellow -- probably why they were chosen|fall-blooming|0.03092554770410061|3|73|attention
+Anemone Aspen Marigolds are a great fall-blooming plant, primarily in orange, gold and yellow -- probably why they were chosen|and|0.028731970116496086|3|73|attention
+Anemone Aspen Marigolds are a great fall-blooming plant, primarily in orange, gold and yellow -- probably why they were chosen|,|0.0283167976886034|3|73|attention
+Find out what this plant is all about.|[SEP]|0.6946468353271484|3|74|attention
+Find out what this plant is all about.|this|0.048215944319963455|3|74|attention
+Find out what this plant is all about.|[CLS]|0.03536844626069069|3|74|attention
+Find out what this plant is all about.|all|0.022979414090514183|3|74|attention
+Find out what this plant is all about.|.|0.022192759439349174|3|74|attention
+Not only is the American bittersweet a multifaceted plant in one's garden but it can also be part of your cut-flower arsenal.|can|0.11521873623132706|3|75|attention
+Not only is the American bittersweet a multifaceted plant in one's garden but it can also be part of your cut-flower arsenal.|but|0.033189307898283005|3|75|attention
+Not only is the American bittersweet a multifaceted plant in one's garden but it can also be part of your cut-flower arsenal.|[CLS]|0.03183684125542641|3|75|attention
+Not only is the American bittersweet a multifaceted plant in one's garden but it can also be part of your cut-flower arsenal.|of|0.031163571402430534|3|75|attention
+Not only is the American bittersweet a multifaceted plant in one's garden but it can also be part of your cut-flower arsenal.|garden|0.030854182317852974|3|75|attention
+Few things suggest the bounty of early fall more than the sight of fruit ripening, even if it's growing on a little plant|even|0.13861358165740967|3|76|attention
+Few things suggest the bounty of early fall more than the sight of fruit ripening, even if it's growing on a little plant|[SEP]|0.06513169407844543|3|76|attention
+Few things suggest the bounty of early fall more than the sight of fruit ripening, even if it's growing on a little plant|it|0.040336061269044876|3|76|attention
+Few things suggest the bounty of early fall more than the sight of fruit ripening, even if it's growing on a little plant|on|0.03828312084078789|3|76|attention
+Few things suggest the bounty of early fall more than the sight of fruit ripening, even if it's growing on a little plant|[CLS]|0.037160709500312805|3|76|attention
+Vitamin A: Found in both animal and plant sources, it supports numerous functions of immune activity, particularly against|[SEP]|0.4157571792602539|4|77|attention
+Vitamin A: Found in both animal and plant sources, it supports numerous functions of immune activity, particularly against|,|0.14920134842395782|4|77|attention
+Vitamin A: Found in both animal and plant sources, it supports numerous functions of immune activity, particularly against|,|0.11399900913238525|4|77|attention
+Vitamin A: Found in both animal and plant sources, it supports numerous functions of immune activity, particularly against|[CLS]|0.050088364630937576|4|77|attention
+Vitamin A: Found in both animal and plant sources, it supports numerous functions of immune activity, particularly against|:|0.02606038935482502|4|77|attention
+The word comes from oha, which is the highly revered taro plant|which|0.18376697599887848|3|78|attention
+The word comes from oha, which is the highly revered taro plant|[SEP]|0.057129278779029846|3|78|attention
+The word comes from oha, which is the highly revered taro plant|oha|0.041271474212408066|3|78|attention
+The word comes from oha, which is the highly revered taro plant|,|0.03536857292056084|3|78|attention
+The word comes from oha, which is the highly revered taro plant|[CLS]|0.028385112062096596|3|78|attention
+Let's take this opportunity Disney has created to excite our children with planes, with the magic and fun that is aviation and let's really plant the seeds of curiosity about airplanes with books after the movie ends.|'s|0.1577913761138916|2|79|attention
+Let's take this opportunity Disney has created to excite our children with planes, with the magic and fun that is aviation and let's really plant the seeds of curiosity about airplanes with books after the movie ends.|[CLS]|0.02551821619272232|2|79|attention
+Let's take this opportunity Disney has created to excite our children with planes, with the magic and fun that is aviation and let's really plant the seeds of curiosity about airplanes with books after the movie ends.|Let|0.022066310048103333|2|79|attention
+Let's take this opportunity Disney has created to excite our children with planes, with the magic and fun that is aviation and let's really plant the seeds of curiosity about airplanes with books after the movie ends.|take|0.014182258397340775|2|79|attention
+Let's take this opportunity Disney has created to excite our children with planes, with the magic and fun that is aviation and let's really plant the seeds of curiosity about airplanes with books after the movie ends.|has|0.01415399368852377|2|79|attention
+The plant in Chandler employs about 11,000 people.|[CLS]|0.05052768066525459|1|80|attention
+The plant in Chandler employs about 11,000 people.|The|0.04692345857620239|1|80|attention
+The plant in Chandler employs about 11,000 people.|employs|0.041256096214056015|1|80|attention
+The plant in Chandler employs about 11,000 people.|Chandler|0.03147220239043236|1|80|attention
+The plant in Chandler employs about 11,000 people.|in|0.030013227835297585|1|80|attention
+As these photos show, a garden can call for nothing more than a pot and a lush plant.|[SEP]|0.32395628094673157|6|81|attention
+As these photos show, a garden can call for nothing more than a pot and a lush plant.|.|0.1989278346300125|6|81|attention
+As these photos show, a garden can call for nothing more than a pot and a lush plant.|,|0.11537113040685654|6|81|attention
+As these photos show, a garden can call for nothing more than a pot and a lush plant.|[CLS]|0.04279319569468498|6|81|attention
+As these photos show, a garden can call for nothing more than a pot and a lush plant.|garden|0.04072260484099388|6|81|attention
+Whether you're itching to plant azaleas or zucchini―or something in between―you need to do a little handiwork before you|to|0.061607103794813156|2|82|attention
+Whether you're itching to plant azaleas or zucchini―or something in between―you need to do a little handiwork before you|or|0.016924584284424782|2|82|attention
+Whether you're itching to plant azaleas or zucchini―or something in between―you need to do a little handiwork before you|itching|0.010821531526744366|2|82|attention
+Whether you're itching to plant azaleas or zucchini―or something in between―you need to do a little handiwork before you|you|0.010198099538683891|2|82|attention
+Whether you're itching to plant azaleas or zucchini―or something in between―you need to do a little handiwork before you|azaleas|0.010012729093432426|2|82|attention
+No soil to plant?|[SEP]|0.7312973141670227|2|83|attention
+No soil to plant?|soil|0.058351069688797|2|83|attention
+No soil to plant?|[CLS]|0.043420832604169846|2|83|attention
+No soil to plant?|No|0.034604381769895554|2|83|attention
+No soil to plant?|?|0.029005514457821846|2|83|attention
+There is no such thing as a black henna plant.|[SEP]|0.16597968339920044|3|84|attention
+There is no such thing as a black henna plant.|.|0.07792921364307404|3|84|attention
+There is no such thing as a black henna plant.|[CLS]|0.054204314947128296|3|84|attention
+There is no such thing as a black henna plant.|henna|0.04504268243908882|3|84|attention
+There is no such thing as a black henna plant.|black|0.025126218795776367|3|84|attention
+The angel's trumpet plant looks beautiful with its petals delicately hanging from the stem.|[SEP]|0.29815563559532166|6|85|attention
+The angel's trumpet plant looks beautiful with its petals delicately hanging from the stem.|angel|0.04027711972594261|6|85|attention
+The angel's trumpet plant looks beautiful with its petals delicately hanging from the stem.|looks|0.03576989471912384|6|85|attention
+The angel's trumpet plant looks beautiful with its petals delicately hanging from the stem.|[CLS]|0.03496120497584343|6|85|attention
+The angel's trumpet plant looks beautiful with its petals delicately hanging from the stem.|The|0.024626577273011208|6|85|attention
+Thug Kitchen's Roasted Strawberry Salad: basically plant nachos.|basically|0.0678342953324318|3|86|attention
+Thug Kitchen's Roasted Strawberry Salad: basically plant nachos.|[CLS]|0.05905471369624138|3|86|attention
+Thug Kitchen's Roasted Strawberry Salad: basically plant nachos.|:|0.02959558181464672|3|86|attention
+Thug Kitchen's Roasted Strawberry Salad: basically plant nachos.|Thug|0.02527947723865509|3|86|attention
+Thug Kitchen's Roasted Strawberry Salad: basically plant nachos.|Roasted|0.022468412294983864|3|86|attention
+When your ideas align with your intention, it is your enthusiasm that makes dreams into reality, like a power plant for the soul.|[SEP]|0.3347971737384796|7|87|attention
+When your ideas align with your intention, it is your enthusiasm that makes dreams into reality, like a power plant for the soul.|.|0.18561957776546478|7|87|attention
+When your ideas align with your intention, it is your enthusiasm that makes dreams into reality, like a power plant for the soul.|,|0.11350849270820618|7|87|attention
+When your ideas align with your intention, it is your enthusiasm that makes dreams into reality, like a power plant for the soul.|power|0.07516471296548843|7|87|attention
+When your ideas align with your intention, it is your enthusiasm that makes dreams into reality, like a power plant for the soul.|for|0.026391470804810524|7|87|attention
+Others can get involved by offering locations for me to plant in.|[SEP]|0.4990104138851166|2|88|attention
+Others can get involved by offering locations for me to plant in.|me|0.06260789930820465|2|88|attention
+Others can get involved by offering locations for me to plant in.|[CLS]|0.04885713756084442|2|88|attention
+Others can get involved by offering locations for me to plant in.|in|0.030020972713828087|2|88|attention
+Others can get involved by offering locations for me to plant in.|.|0.029195314273238182|2|88|attention
+Here are some specific techniques to plant the seed of happiness.|[SEP]|0.4018886983394623|2|89|attention
+Here are some specific techniques to plant the seed of happiness.|.|0.23136956989765167|2|89|attention
+Here are some specific techniques to plant the seed of happiness.|seed|0.06284553557634354|2|89|attention
+Here are some specific techniques to plant the seed of happiness.|happiness|0.040255237370729446|2|89|attention
+Here are some specific techniques to plant the seed of happiness.|techniques|0.038806211203336716|2|89|attention
+The cacao plant's legacy is ancient and complex, while the business surrounding it is bitter, messy and even ruthless.|the|0.10971954464912415|9|90|attention
+The cacao plant's legacy is ancient and complex, while the business surrounding it is bitter, messy and even ruthless.|[CLS]|0.03942253813147545|9|90|attention
+The cacao plant's legacy is ancient and complex, while the business surrounding it is bitter, messy and even ruthless.|cacao|0.03424050286412239|9|90|attention
+The cacao plant's legacy is ancient and complex, while the business surrounding it is bitter, messy and even ruthless.|'s|0.026248455047607422|9|90|attention
+The cacao plant's legacy is ancient and complex, while the business surrounding it is bitter, messy and even ruthless.|The|0.020694047212600708|9|90|attention
+A hidden element in used coffee grounds could give them a use beyond plant food.|[SEP]|0.43434223532676697|4|91|attention
+A hidden element in used coffee grounds could give them a use beyond plant food.|.|0.15063807368278503|4|91|attention
+A hidden element in used coffee grounds could give them a use beyond plant food.|coffee|0.0640014186501503|4|91|attention
+A hidden element in used coffee grounds could give them a use beyond plant food.|food|0.052067603915929794|4|91|attention
+A hidden element in used coffee grounds could give them a use beyond plant food.|[CLS]|0.04684123024344444|4|91|attention
+Allow us to introduce you to our other favorite part of the celery plant: celeriac.|:|0.032881904393434525|3|92|attention
+Allow us to introduce you to our other favorite part of the celery plant: celeriac.|celeriac|0.026777224615216255|3|92|attention
+Allow us to introduce you to our other favorite part of the celery plant: celeriac.|[CLS]|0.025559326633810997|3|92|attention
+Allow us to introduce you to our other favorite part of the celery plant: celeriac.|celery|0.01977594755589962|3|92|attention
+Allow us to introduce you to our other favorite part of the celery plant: celeriac.|[SEP]|0.012908521108329296|3|92|attention
+Take care to plant well, to allow what you plant in your mind to germinate creatively, beautifully.|[CLS]|0.03803982213139534|2|93|attention
+Take care to plant well, to allow what you plant in your mind to germinate creatively, beautifully.|creatively|0.02241676300764084|2|93|attention
+Take care to plant well, to allow what you plant in your mind to germinate creatively, beautifully.|mind|0.01765311509370804|2|93|attention
+Take care to plant well, to allow what you plant in your mind to germinate creatively, beautifully.|what|0.015394949354231358|2|93|attention
+Take care to plant well, to allow what you plant in your mind to germinate creatively, beautifully.|well|0.014792714267969131|2|93|attention
+Take care to plant well, to allow what you plant in your mind to germinate creatively, beautifully.|what|0.041470397263765335|2|94|attention
+Take care to plant well, to allow what you plant in your mind to germinate creatively, beautifully.|[CLS]|0.036064859479665756|2|94|attention
+Take care to plant well, to allow what you plant in your mind to germinate creatively, beautifully.|creatively|0.02514440380036831|2|94|attention
+Take care to plant well, to allow what you plant in your mind to germinate creatively, beautifully.|mind|0.020857766270637512|2|94|attention
+Take care to plant well, to allow what you plant in your mind to germinate creatively, beautifully.|you|0.020181091502308846|2|94|attention
+Cranberries are one of the great superfoods rich in plant antioxidants and cancer-fighting phytochemicals called proanthocyanadins (PACs).|one|0.053146760910749435|4|95|attention
+Cranberries are one of the great superfoods rich in plant antioxidants and cancer-fighting phytochemicals called proanthocyanadins (PACs).|antioxidants|0.05256151035428047|4|95|attention
+Cranberries are one of the great superfoods rich in plant antioxidants and cancer-fighting phytochemicals called proanthocyanadins (PACs).|[CLS]|0.0221323911100626|4|95|attention
+Cranberries are one of the great superfoods rich in plant antioxidants and cancer-fighting phytochemicals called proanthocyanadins (PACs).|in|0.013432376086711884|4|95|attention
+Cranberries are one of the great superfoods rich in plant antioxidants and cancer-fighting phytochemicals called proanthocyanadins (PACs).|of|0.012693830765783787|4|95|attention
+With such a beautiful plant, we welcome the snow.|[SEP]|0.3452821671962738|3|96|attention
+With such a beautiful plant, we welcome the snow.|.|0.19121937453746796|3|96|attention
+With such a beautiful plant, we welcome the snow.|,|0.1253499984741211|3|96|attention
+With such a beautiful plant, we welcome the snow.|snow|0.051007986068725586|3|96|attention
+With such a beautiful plant, we welcome the snow.|[CLS]|0.04053599759936333|3|96|attention
+When we decided on growing coffee, we set out to find a coffee plant that would meet our unique requirements.|[SEP]|0.3106648027896881|3|97|attention
+When we decided on growing coffee, we set out to find a coffee plant that would meet our unique requirements.|.|0.2058289796113968|3|97|attention
+When we decided on growing coffee, we set out to find a coffee plant that would meet our unique requirements.|,|0.1368122696876526|3|97|attention
+When we decided on growing coffee, we set out to find a coffee plant that would meet our unique requirements.|coffee|0.04357520863413811|3|97|attention
+When we decided on growing coffee, we set out to find a coffee plant that would meet our unique requirements.|[CLS]|0.03730064630508423|3|97|attention
+Operations at the plant are likely to be halted for a long time and other makers of SAP resins are operating on a full-production|resins|0.05438540503382683|9|98|attention
+Operations at the plant are likely to be halted for a long time and other makers of SAP resins are operating on a full-production|[CLS]|0.04955914616584778|9|98|attention
+Operations at the plant are likely to be halted for a long time and other makers of SAP resins are operating on a full-production|SAP|0.03722897544503212|9|98|attention
+Operations at the plant are likely to be halted for a long time and other makers of SAP resins are operating on a full-production|the|0.03217759728431702|9|98|attention
+Operations at the plant are likely to be halted for a long time and other makers of SAP resins are operating on a full-production|at|0.02615956962108612|9|98|attention
+A: Plants that are native to the area in which you live actually require the least attention of anything you'll plant.|'ll|0.18812008202075958|2|99|attention
+A: Plants that are native to the area in which you live actually require the least attention of anything you'll plant.|[SEP]|0.14023397862911224|2|99|attention
+A: Plants that are native to the area in which you live actually require the least attention of anything you'll plant.|you|0.039111360907554626|2|99|attention
+A: Plants that are native to the area in which you live actually require the least attention of anything you'll plant.|[CLS]|0.033395033329725266|2|99|attention
+A: Plants that are native to the area in which you live actually require the least attention of anything you'll plant.|.|0.030077612027525902|2|99|attention
+Yesterday morning, I ventured out to my garden to check on a squash plant that I had recently replanted.|,|0.11840931326150894|6|100|attention
+Yesterday morning, I ventured out to my garden to check on a squash plant that I had recently replanted.|squash|0.04663247987627983|6|100|attention
+Yesterday morning, I ventured out to my garden to check on a squash plant that I had recently replanted.|[CLS]|0.04329827055335045|6|100|attention
+Yesterday morning, I ventured out to my garden to check on a squash plant that I had recently replanted.|garden|0.02773175574839115|6|100|attention
+Yesterday morning, I ventured out to my garden to check on a squash plant that I had recently replanted.|a|0.021284794434905052|6|100|attention
+A baseball plant, or Jatropha Berlandieri, is a spectacle of a species for sure.|of|0.13508665561676025|3|101|attention
+A baseball plant, or Jatropha Berlandieri, is a spectacle of a species for sure.|[CLS]|0.03937845677137375|3|101|attention
+A baseball plant, or Jatropha Berlandieri, is a spectacle of a species for sure.|baseball|0.038689520210027695|3|101|attention
+A baseball plant, or Jatropha Berlandieri, is a spectacle of a species for sure.|A|0.030210478231310844|3|101|attention
+A baseball plant, or Jatropha Berlandieri, is a spectacle of a species for sure.|for|0.020224932581186295|3|101|attention
+It's rincospernum, a plant in the jasmine family that blooms all over the city.|in|0.040770042687654495|6|102|attention
+It's rincospernum, a plant in the jasmine family that blooms all over the city.|all|0.03140799328684807|6|102|attention
+It's rincospernum, a plant in the jasmine family that blooms all over the city.|family|0.019026124849915504|6|102|attention
+It's rincospernum, a plant in the jasmine family that blooms all over the city.|city|0.017587026581168175|6|102|attention
+It's rincospernum, a plant in the jasmine family that blooms all over the city.|[CLS]|0.01739349402487278|6|102|attention
+Many of us don't have a large backyards to plant flowers and herbs, but that doesn't mean we have to go without our own garden|we|0.13745605945587158|2|103|attention
+Many of us don't have a large backyards to plant flowers and herbs, but that doesn't mean we have to go without our own garden|n't|0.13574877381324768|2|103|attention
+Many of us don't have a large backyards to plant flowers and herbs, but that doesn't mean we have to go without our own garden|that|0.08106165379285812|2|103|attention
+Many of us don't have a large backyards to plant flowers and herbs, but that doesn't mean we have to go without our own garden|to|0.07513334602117538|2|103|attention
+Many of us don't have a large backyards to plant flowers and herbs, but that doesn't mean we have to go without our own garden|flowers|0.03374827280640602|2|103|attention
+Are you looking for a maintenance free plant that can take the heat of the summer months?|[SEP]|0.6053306460380554|9|104|attention
+Are you looking for a maintenance free plant that can take the heat of the summer months?|[CLS]|0.04097335413098335|9|104|attention
+Are you looking for a maintenance free plant that can take the heat of the summer months?|maintenance|0.022552311420440674|9|104|attention
+Are you looking for a maintenance free plant that can take the heat of the summer months?|you|0.021115459501743317|9|104|attention
+Are you looking for a maintenance free plant that can take the heat of the summer months?|a|0.020646119490265846|9|104|attention
+In a small bed or pots, plant a few tomato plants, basil and oregano -- all of the garden ingredients that you need for a pizza.|[CLS]|0.05254635214805603|2|105|attention
+In a small bed or pots, plant a few tomato plants, basil and oregano -- all of the garden ingredients that you need for a pizza.|,|0.04092282056808472|2|105|attention
+In a small bed or pots, plant a few tomato plants, basil and oregano -- all of the garden ingredients that you need for a pizza.|In|0.03815590590238571|2|105|attention
+In a small bed or pots, plant a few tomato plants, basil and oregano -- all of the garden ingredients that you need for a pizza.|you|0.020328963175415993|2|105|attention
+In a small bed or pots, plant a few tomato plants, basil and oregano -- all of the garden ingredients that you need for a pizza.|[SEP]|0.019573109224438667|2|105|attention
+Get your hands dirty and plant, trim, fertilize and reacquaint yourself with Mother Nature.|[CLS]|0.02584819681942463|2|106|attention
+Get your hands dirty and plant, trim, fertilize and reacquaint yourself with Mother Nature.|trim|0.024056827649474144|2|106|attention
+Get your hands dirty and plant, trim, fertilize and reacquaint yourself with Mother Nature.|and|0.02127937413752079|2|106|attention
+Get your hands dirty and plant, trim, fertilize and reacquaint yourself with Mother Nature.|and|0.019471127539873123|2|106|attention
+Get your hands dirty and plant, trim, fertilize and reacquaint yourself with Mother Nature.|,|0.018405459821224213|2|106|attention
+Here's another wolf in sheep's clothing for you, though this plant is hardly vicious at all: Flickr photo by Tropic~7 Through|this|0.14848531782627106|3|107|attention
+Here's another wolf in sheep's clothing for you, though this plant is hardly vicious at all: Flickr photo by Tropic~7 Through|clothing|0.08076674491167068|3|107|attention
+Here's another wolf in sheep's clothing for you, though this plant is hardly vicious at all: Flickr photo by Tropic~7 Through|at|0.0532878041267395|3|107|attention
+Here's another wolf in sheep's clothing for you, though this plant is hardly vicious at all: Flickr photo by Tropic~7 Through|is|0.02425961196422577|3|107|attention
+Here's another wolf in sheep's clothing for you, though this plant is hardly vicious at all: Flickr photo by Tropic~7 Through|though|0.023514894768595695|3|107|attention
+The printing plant on the top floors of the building at Broadway and 4th street in New York City used|[SEP]|0.5381919741630554|9|108|attention
+The printing plant on the top floors of the building at Broadway and 4th street in New York City used|used|0.07239576429128647|9|108|attention
+The printing plant on the top floors of the building at Broadway and 4th street in New York City used|printing|0.07194334268569946|9|108|attention
+The printing plant on the top floors of the building at Broadway and 4th street in New York City used|[CLS]|0.0690944716334343|9|108|attention
+The printing plant on the top floors of the building at Broadway and 4th street in New York City used|The|0.05067569389939308|9|108|attention
+It may be sweet and calorie-free, but extracting that flavor from a plant requires serious chemical interventions.|flavor|0.11615350097417831|3|109|attention
+It may be sweet and calorie-free, but extracting that flavor from a plant requires serious chemical interventions.|a|0.06239594519138336|3|109|attention
+It may be sweet and calorie-free, but extracting that flavor from a plant requires serious chemical interventions.|serious|0.05739210918545723|3|109|attention
+It may be sweet and calorie-free, but extracting that flavor from a plant requires serious chemical interventions.|It|0.033883463591337204|3|109|attention
+It may be sweet and calorie-free, but extracting that flavor from a plant requires serious chemical interventions.|[CLS]|0.03274134173989296|3|109|attention
+Each part of the pea plant -- the tiny peas themselves, their shoots, even their pods (which can be simmered to make a broth) -- tastes of the sweet, sunny days of spring.|the|0.15474911034107208|6|110|attention
+Each part of the pea plant -- the tiny peas themselves, their shoots, even their pods (which can be simmered to make a broth) -- tastes of the sweet, sunny days of spring.|[CLS]|0.04228682816028595|6|110|attention
+Each part of the pea plant -- the tiny peas themselves, their shoots, even their pods (which can be simmered to make a broth) -- tastes of the sweet, sunny days of spring.|pea|0.029395466670393944|6|110|attention
+Each part of the pea plant -- the tiny peas themselves, their shoots, even their pods (which can be simmered to make a broth) -- tastes of the sweet, sunny days of spring.|themselves|0.028610194101929665|6|110|attention
+Each part of the pea plant -- the tiny peas themselves, their shoots, even their pods (which can be simmered to make a broth) -- tastes of the sweet, sunny days of spring.|sunny|0.019941745325922966|6|110|attention
+From plant 'Prozac' to a surprising way to soothe sunburns, here are a few unusual household hints.|unusual|0.13851796090602875|3|111|attention
+From plant 'Prozac' to a surprising way to soothe sunburns, here are a few unusual household hints.|a|0.025295766070485115|3|111|attention
+From plant 'Prozac' to a surprising way to soothe sunburns, here are a few unusual household hints.|'Prozac|0.02152552455663681|3|111|attention
+From plant 'Prozac' to a surprising way to soothe sunburns, here are a few unusual household hints.|'|0.017421748489141464|3|111|attention
+From plant 'Prozac' to a surprising way to soothe sunburns, here are a few unusual household hints.|[CLS]|0.015055990777909756|3|111|attention
+He added that it is not necessary to purchase a sensor, which costs 100 euros ($125), for each plant because there is a multi|[SEP]|0.31419453024864197|9|112|attention
+He added that it is not necessary to purchase a sensor, which costs 100 euros ($125), for each plant because there is a multi|)|0.155238077044487|9|112|attention
+He added that it is not necessary to purchase a sensor, which costs 100 euros ($125), for each plant because there is a multi|sensor|0.0734369307756424|9|112|attention
+He added that it is not necessary to purchase a sensor, which costs 100 euros ($125), for each plant because there is a multi|,|0.07012482732534409|9|112|attention
+He added that it is not necessary to purchase a sensor, which costs 100 euros ($125), for each plant because there is a multi|,|0.04718804359436035|9|112|attention
+They plant and tend, fertilize and weed, harvest and process -- in short, do all it takes to produce a crop.|They|0.03074236959218979|2|113|attention
+They plant and tend, fertilize and weed, harvest and process -- in short, do all it takes to produce a crop.|[CLS]|0.026247715577483177|2|113|attention
+They plant and tend, fertilize and weed, harvest and process -- in short, do all it takes to produce a crop.|--|0.017568355426192284|2|113|attention
+They plant and tend, fertilize and weed, harvest and process -- in short, do all it takes to produce a crop.|and|0.017438063398003578|2|113|attention
+They plant and tend, fertilize and weed, harvest and process -- in short, do all it takes to produce a crop.|tend|0.01562398299574852|2|113|attention
+Photo by Leo Rosen Photo by Leo Rosen Since their flowers are so huge and heavy you will need to hold the plant up in some|[SEP]|0.5735486745834351|3|114|attention
+Photo by Leo Rosen Photo by Leo Rosen Since their flowers are so huge and heavy you will need to hold the plant up in some|[CLS]|0.04729707911610603|3|114|attention
+Photo by Leo Rosen Photo by Leo Rosen Since their flowers are so huge and heavy you will need to hold the plant up in some|flowers|0.04562222957611084|3|114|attention
+Photo by Leo Rosen Photo by Leo Rosen Since their flowers are so huge and heavy you will need to hold the plant up in some|the|0.03208279237151146|3|114|attention
+Photo by Leo Rosen Photo by Leo Rosen Since their flowers are so huge and heavy you will need to hold the plant up in some|their|0.028528034687042236|3|114|attention
+"As the old Chinese proverb says, ""The best time to plant an oak tree was 20 years ago, and the next best time is today."""|''|0.21420226991176605|2|115|attention
+"As the old Chinese proverb says, ""The best time to plant an oak tree was 20 years ago, and the next best time is today."""|and|0.09658467769622803|2|115|attention
+"As the old Chinese proverb says, ""The best time to plant an oak tree was 20 years ago, and the next best time is today."""|an|0.08396121114492416|2|115|attention
+"As the old Chinese proverb says, ""The best time to plant an oak tree was 20 years ago, and the next best time is today."""|20|0.025897838175296783|2|115|attention
+"As the old Chinese proverb says, ""The best time to plant an oak tree was 20 years ago, and the next best time is today."""|[CLS]|0.02395060658454895|2|115|attention
+A relationship is like a plant: It needs regular attention to stay healthy.|[SEP]|0.47093406319618225|4|116|attention
+A relationship is like a plant: It needs regular attention to stay healthy.|.|0.22187475860118866|4|116|attention
+A relationship is like a plant: It needs regular attention to stay healthy.|[CLS]|0.04037383198738098|4|116|attention
+A relationship is like a plant: It needs regular attention to stay healthy.|relationship|0.020272893831133842|4|116|attention
+A relationship is like a plant: It needs regular attention to stay healthy.|healthy|0.0191959161311388|4|116|attention
+Does your plant have enough sunlight?|[SEP]|0.6520727276802063|3|117|attention
+Does your plant have enough sunlight?|[CLS]|0.05369381606578827|3|117|attention
+Does your plant have enough sunlight?|your|0.05132143571972847|3|117|attention
+Does your plant have enough sunlight?|sunlight|0.038366224616765976|3|117|attention
+Does your plant have enough sunlight?|?|0.033621594309806824|3|117|attention
+The shrimp plant, Justicia brandegeeana, makes me think of an early evening summer cocktail party with an exotic guest list|of|0.1961870640516281|9|118|attention
+The shrimp plant, Justicia brandegeeana, makes me think of an early evening summer cocktail party with an exotic guest list|shrimp|0.06783392280340195|9|118|attention
+The shrimp plant, Justicia brandegeeana, makes me think of an early evening summer cocktail party with an exotic guest list|The|0.053059231489896774|9|118|attention
+The shrimp plant, Justicia brandegeeana, makes me think of an early evening summer cocktail party with an exotic guest list|,|0.04220834746956825|9|118|attention
+The shrimp plant, Justicia brandegeeana, makes me think of an early evening summer cocktail party with an exotic guest list|[CLS]|0.04075266048312187|9|118|attention
+Why do we plant seeds, saplings and seedlings with hope in our hearts each spring?|seeds|0.0366174690425396|2|119|attention
+Why do we plant seeds, saplings and seedlings with hope in our hearts each spring?|[CLS]|0.02838817797601223|2|119|attention
+Why do we plant seeds, saplings and seedlings with hope in our hearts each spring?|we|0.02146589197218418|2|119|attention
+Why do we plant seeds, saplings and seedlings with hope in our hearts each spring?|saplings|0.02102535031735897|2|119|attention
+Why do we plant seeds, saplings and seedlings with hope in our hearts each spring?|with|0.019969893619418144|2|119|attention
+We plant in order to harvest -- not just for the moment but to preserve and nurture the future.|We|0.05057938024401665|2|120|attention
+We plant in order to harvest -- not just for the moment but to preserve and nurture the future.|[CLS]|0.041856035590171814|2|120|attention
+We plant in order to harvest -- not just for the moment but to preserve and nurture the future.|harvest|0.033661603927612305|2|120|attention
+We plant in order to harvest -- not just for the moment but to preserve and nurture the future.|moment|0.026453152298927307|2|120|attention
+We plant in order to harvest -- not just for the moment but to preserve and nurture the future.|--|0.021956460550427437|2|120|attention
+For more about the pitcher plant, read our care tips.|[SEP]|0.6348252296447754|3|121|attention
+For more about the pitcher plant, read our care tips.|pitcher|0.06046420335769653|3|121|attention
+For more about the pitcher plant, read our care tips.|the|0.039419837296009064|3|121|attention
+For more about the pitcher plant, read our care tips.|[CLS]|0.03614160418510437|3|121|attention
+For more about the pitcher plant, read our care tips.|care|0.03310806676745415|3|121|attention
+Flickr photo by brianwc Nepenthes (or pitcher plant) is a genus of carnivorous, mostly vining, tropical plants native to|of|0.19788360595703125|3|122|attention
+Flickr photo by brianwc Nepenthes (or pitcher plant) is a genus of carnivorous, mostly vining, tropical plants native to|[CLS]|0.034124478697776794|3|122|attention
+Flickr photo by brianwc Nepenthes (or pitcher plant) is a genus of carnivorous, mostly vining, tropical plants native to|genus|0.02136813849210739|3|122|attention
+Flickr photo by brianwc Nepenthes (or pitcher plant) is a genus of carnivorous, mostly vining, tropical plants native to|mostly|0.020756104961037636|3|122|attention
+Flickr photo by brianwc Nepenthes (or pitcher plant) is a genus of carnivorous, mostly vining, tropical plants native to|a|0.019519736990332603|3|122|attention
+But the seeds of that plant|[SEP]|0.7093871235847473|3|123|attention
+But the seeds of that plant|[CLS]|0.04527715966105461|3|123|attention
+But the seeds of that plant|that|0.04102860391139984|3|123|attention
+But the seeds of that plant|But|0.0382741279900074|3|123|attention
+But the seeds of that plant|seeds|0.03374696895480156|3|123|attention
+There are many occasions when a plant's leaf is more intriguing than its flower -- introducing the Copperleaf.|[CLS]|0.043188076466321945|3|124|attention
+There are many occasions when a plant's leaf is more intriguing than its flower -- introducing the Copperleaf.|is|0.02050725184381008|3|124|attention
+There are many occasions when a plant's leaf is more intriguing than its flower -- introducing the Copperleaf.|--|0.019902443513274193|3|124|attention
+There are many occasions when a plant's leaf is more intriguing than its flower -- introducing the Copperleaf.|introducing|0.017870508134365082|3|124|attention
+There are many occasions when a plant's leaf is more intriguing than its flower -- introducing the Copperleaf.|a|0.01714019477367401|3|124|attention
+"Artist, educator and fashion designer Sasha Duerr uses just about anything to dye clothing: from kitchen waste to invasive ""weeds"" to the leaves, fruit or petals of nearly any tree or plant."|tree|0.03278077021241188|6|125|attention
+"Artist, educator and fashion designer Sasha Duerr uses just about anything to dye clothing: from kitchen waste to invasive ""weeds"" to the leaves, fruit or petals of nearly any tree or plant."|[CLS]|0.019066892564296722|6|125|attention
+"Artist, educator and fashion designer Sasha Duerr uses just about anything to dye clothing: from kitchen waste to invasive ""weeds"" to the leaves, fruit or petals of nearly any tree or plant."|[SEP]|0.017348594963550568|6|125|attention
+"Artist, educator and fashion designer Sasha Duerr uses just about anything to dye clothing: from kitchen waste to invasive ""weeds"" to the leaves, fruit or petals of nearly any tree or plant."|or|0.014926806092262268|6|125|attention
+"Artist, educator and fashion designer Sasha Duerr uses just about anything to dye clothing: from kitchen waste to invasive ""weeds"" to the leaves, fruit or petals of nearly any tree or plant."|any|0.013178233057260513|6|125|attention
+This was a perfect opportunity to do something creative, but instead Jim Findlay does nothing but reproduce a fetishized female sexuality... in a plant.|,|0.20481692254543304|3|126|attention
+This was a perfect opportunity to do something creative, but instead Jim Findlay does nothing but reproduce a fetishized female sexuality... in a plant.|.|0.06847406178712845|3|126|attention
+This was a perfect opportunity to do something creative, but instead Jim Findlay does nothing but reproduce a fetishized female sexuality... in a plant.|[CLS]|0.04933004453778267|3|126|attention
+This was a perfect opportunity to do something creative, but instead Jim Findlay does nothing but reproduce a fetishized female sexuality... in a plant.|[SEP]|0.03186194971203804|3|126|attention
+This was a perfect opportunity to do something creative, but instead Jim Findlay does nothing but reproduce a fetishized female sexuality... in a plant.|Jim|0.026788892224431038|3|126|attention
