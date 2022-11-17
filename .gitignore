@@ -1,2 +1,3 @@
 huggingface_models/*
 *.sh
+wandb/*
