@@ -1,0 +1,15 @@
+name: bertology_env
+dependencies:
+  - pytorch::pytorch # better installed from https://pytorch.org/get-started/locally/
+  - numpy
+  - pandas
+  - jupyter
+  - nltk
+  - regex
+  - scikit-learn
+  - matplotlib
+  - conda-forge::transformers
+  - conda-forge::tweepy
+  - conda-forge::optuna
+  - conda-forge::wandb
+ 
