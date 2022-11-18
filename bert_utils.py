@@ -134,7 +134,7 @@ def _average_attention_for_multiple_token_words(
 
 
 def _create_target_word_mask(
-    sentence: str, target_word: str
+    tokenized_text: list[str], target_word: str
 ) -> tuple[torch.Tensor, list[str]]:
     """Create a mask for the target word where everything is false except
     the target word.
@@ -154,12 +154,16 @@ def _create_target_word_mask(
             - list[str]: Tokenized text
     """
 
-    # Divide sentence by the end of \w tokens
-    sentence_list = nltk.word_tokenize(sentence)
-
-    # Add CLS and SEP tokens
-    sentence_list = ["[CLS]"] + sentence_list + ["[SEP]"]
-
+    sentence_list = []
+    current_word = tokenized_text[0]
+    for word in tokenized_text[1:]:
+        if word.startswith("##"):
+            current_word += word[2:]
+        else:
+            sentence_list.append(current_word)
+            current_word = word
+            
+    
     mask = torch.tensor(
         [True if word == target_word else False for word in sentence_list]
     )
@@ -170,7 +174,7 @@ def _create_target_word_mask(
 def _extract_attention_to_target(
     avg_attention: torch.Tensor,
     target_word_mask: torch.Tensor,
-    tokenized_text: list[str],
+    sentence_words_list: list[str],
 ) -> tuple[torch.Tensor, list[str]]:
     """Extract the attention of other words to the target word. If multiple instances of the
     target word are present, expect multiple columns in the attention to target word tensor.
@@ -184,7 +188,7 @@ def _extract_attention_to_target(
     Args:
         avg_attention (torch.Tensor): Averaged attention matrix
         target_word_mask (torch.Tensor): Mask for the target word
-        tokenized_text (list[str]): Tokenized text
+        sentence_words_list (list[str]): Words of the sentence and special tokens
 
     Returns:
         tuple[torch.Tensor, list[str]]: A tuple of:
@@ -200,8 +204,8 @@ def _extract_attention_to_target(
         :, target_indices
     ]
 
-    # Extract non_target_indices from tokenized_text
-    non_target_words = [tokenized_text[i] for i in non_target_indices]
+    # Extract non_target_indices from sentence_words_list
+    non_target_words = [sentence_words_list[i] for i in non_target_indices]
 
     # Make sure that attention_to_target always has two dimensions
     if len(attention_to_target.shape) == 1:
@@ -284,7 +288,7 @@ def get_attention_to_target_word_in_sentence(
     )
 
     target_word_mask, sentence_list = _create_target_word_mask(
-        sentence, target_word
+        tokenized_text, target_word
     )
 
     avg_attention_to_target, non_target_words = _extract_attention_to_target(
@@ -297,7 +301,7 @@ def get_attention_to_target_word_in_sentence(
 
 
 def get_top_n_attention_words_to_target(
-    sentence: str, target_word: str, n: int = 5
+    sentence: str, target_word: str, n: int = -1
 ) -> Iterator[pd.DataFrame]:
     """Get the top n words that have the highest attention to the target word.
 
@@ -324,7 +328,12 @@ def get_top_n_attention_words_to_target(
                 "attention": avg_attention_to_target.squeeze().tolist(),
             }
         )
-        df = df.sort_values(by="attention", ascending=False)[:n]
+
+        df = df.sort_values(by="attention", ascending=False)
+        
+        if n > 0:
+            df = df[:n]
+
         yield df
 
 
