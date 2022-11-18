@@ -56,7 +56,7 @@ def parse_arguments(parser: argparse.ArgumentParser) -> argparse.Namespace:
         arguments['save_path'] = f"data/{target}_embeddings_clustered.csv"
     
     if not arguments['embedding_file']:
-        arguments['embedding_file'] = f"data/{target}_embeddings.csv"
+        arguments['embedding_file'] = f"data/bert_embeddings_of_word_{target}_in_sentence.csv"
 
     return arguments
 
