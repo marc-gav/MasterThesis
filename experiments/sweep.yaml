@@ -1,12 +1,13 @@
-method: grid
-name: sweep
+project: Probing classifier - Simple 2 layer NN
+method: bayes
 metric:
-  goal: maximize
-  name: val_acc
-parameters: 
+  name: validation_loss
+  goal: minimize
+parameters:
+  learning_rate:
+    min: 0.0001
+    max: 0.1
+  optimizer:
+    values: ["adam", "sgd"]
   batch_size:
-    values: [16, 32, 64]
-  epochs:
-    values: [5, 10, 15]
-  lr:
-    values: [0.001, 0.01, 0.1]
+    values: [32, 64, 128]
