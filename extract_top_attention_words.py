@@ -1,16 +1,13 @@
-import pandas as pd
 from bert_utils import get_top_n_attention_words_to_target
 from tqdm import tqdm
+import os
+import re
+import pandas as pd
 
-if __name__ == "__main__":
-    df_sentences_clustered = pd.read_csv(
-        "data/plant_embeddings_with_cluster_labels.csv",
-        sep="|",
-        index_col=False,
-    )
 
+def extract_context_attention(target_word: str, clustered_embeddings_df: pd.DataFrame):
     # Remove repeated sentences
-    df_sentences_clustered.drop_duplicates(subset=["sentence"], inplace=True)
+    clustered_embeddings_df.drop_duplicates(subset=["sentence"], inplace=True)
 
     df_top_attention_all_sentences = pd.DataFrame(
         columns=[
@@ -26,13 +23,13 @@ if __name__ == "__main__":
     # to use the index of the row, but in case a target word
     # appears multiple times in a sentence, I treat them as separate sentences
     for _, row in tqdm(
-        df_sentences_clustered.iterrows(),
-        desc="Extracting top attention words",
-        total=len(df_sentences_clustered),
+        clustered_embeddings_df.iterrows(),
+        desc=f"Extracting top attention words for {target_word}",
+        total=len(clustered_embeddings_df),
     ):
         sentence = row["sentence"]
         for top_n_attention in get_top_n_attention_words_to_target(
-            sentence, "plant", n=5
+            sentence, target_word, n=10 # Top 10 words
         ):
 
             top_n_attention["sentence_index"] = sentence_number
@@ -50,8 +47,19 @@ if __name__ == "__main__":
             sentence_number += 1
 
     df_top_attention_all_sentences.to_csv(
-        "data/plant_top_attention_words.csv",
+        f"data/{target_word}_top_attention_words.csv",
         sep="|",
         index=False,
     )
-    print(f'Top attention words saved to "data/plant_top_attention_words.csv"')
+    print(f'Top attention words saved to "data/{target_word}_top_attention_words.csv"')
+
+
+if __name__ == "__main__":
+    for file in os.listdir("data"):
+        if re.match(r"(.*)_embeddings_clustered.csv", file):
+            target_word = re.match(r"(.*)_embeddings_clustered.csv", file).group(1)
+            clustered_embeddings_df = pd.read_csv(
+                f"data/{target_word}_embeddings_clustered.csv",
+                sep="|",
+            )
+            extract_context_attention(target_word, clustered_embeddings_df)
