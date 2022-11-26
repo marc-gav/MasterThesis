@@ -185,7 +185,11 @@ class ClusteredWordsDataset(Dataset):
         # The index that comes from the dataframe
         # is not guaranteed to be in order or even start at 0, it only provides us with
         # information to group words into the same sentence
-        for sentence_num, sentence_idx in enumerate(self.sentences):
+        for sentence_num, sentence_idx in tqdm(
+            enumerate(self.sentences),
+            total=len(self.sentences),
+            desc="Loading sentences into dataframe",
+        ):
             sentence_df = df[df["sentence_index"] == sentence_idx]
             words = sentence_df["word"].values
             cluster_value = sentence_df["cluster_label"].values[0]
