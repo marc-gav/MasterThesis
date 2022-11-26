@@ -1,3 +1,7 @@
 huggingface_models/*
 *.sh
 wandb/*
+__pycache__
+*egg-info
+lightning_logs
+datasets
