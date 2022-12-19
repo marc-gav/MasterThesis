@@ -30,11 +30,11 @@ def log_extra_info(cluster_probabilities, labels, epoch, step):
 
 
 class BaseProbingClassifier(pl.LightningModule):
-    def __init__(self, hyperparams: Config, vocab_size, num_clusters):
+    def __init__(self, hyperparams: Config, input_size, num_clusters):
         super().__init__()
         self.hyperparams = hyperparams
 
-        self.vocab_size = vocab_size
+        self.input_size = input_size
         self.num_clusters = num_clusters
 
     def forward(self, x):
@@ -44,7 +44,7 @@ class BaseProbingClassifier(pl.LightningModule):
         x, labels = batch
         cluster_probabilities = self(x)
         # every 50 epochs
-        if self.current_epoch % 50 == 0 and batch_idx == 0:
+        if self.current_epoch % 5 == 0 and batch_idx == 0:
             log_extra_info(
                 cluster_probabilities,
                 labels,
@@ -76,26 +76,16 @@ class BaseProbingClassifier(pl.LightningModule):
 
 
 class ProbingClassifier(BaseProbingClassifier):
-    def __init__(self, hyperparams: Config, vocab_size, num_clusters):
+    def __init__(self, hyperparams: Config, input_size, num_clusters):
         super().__init__(
-            hyperparams,
-            num_clusters=num_clusters,
-            vocab_size=vocab_size,
+            hyperparams, num_clusters=num_clusters, input_size=input_size
         )
 
-        # Each data element will be of shape (10, vocab_size)
-        # we want to flatten it to (10 * vocab_size) so that we can
-        # pass it to a fully connected layer
-        # reduce by an order of magnitude in each layer
-        input_size = 10 * vocab_size
-        first_layer_size = input_size // 8
-        second_layer_size = first_layer_size // 8
-        self.fc1 = nn.Linear(self.vocab_size * 10, first_layer_size)
-        self.fc2 = nn.Linear(first_layer_size, second_layer_size)
-        self.fc3 = nn.Linear(second_layer_size, self.num_clusters)
+        self.fc1 = nn.Linear(input_size, 1024)
+        self.fc2 = nn.Linear(1024, num_clusters)
 
     def forward(self, x):
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = self.fc3(x)
+        x = self.fc1(x)
+        x = F.relu(x)
+        x = self.fc2(x)
         return x

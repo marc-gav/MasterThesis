@@ -1,4 +1,4 @@
-from bert_utils.bert_utils import get_top_n_attention_words_to_target
+from bertologist.utils import get_top_n_attention_words_to_target
 from tqdm import tqdm
 import os
 import re
@@ -8,7 +8,6 @@ import pandas as pd
 def extract_context_attention(
     target_word: str,
     clustered_embeddings_df: pd.DataFrame,
-    store_csv: bool = True,
 ):
     """Extract the attention weights of the context words towards the target word.
 
@@ -21,57 +20,32 @@ def extract_context_attention(
         # TODO: define return type
     """
 
-    # Remove repeated sentences
-    clustered_embeddings_df.drop_duplicates(subset=["sentence"], inplace=True)
-
-    df_top_attention_all_sentences = pd.DataFrame(
-        columns=[
-            "sentence",
-            "word",
-            "attention",
-            "cluster_label",
-            "sentence_index",
-        ]
-    )
-
-    sentence_number = 0  # I know it would make more sense
-    # to use the index of the row, but in case a target word
-    # appears multiple times in a sentence, I treat them as separate sentences
-    for _, row in tqdm(
-        clustered_embeddings_df.iterrows(),
-        desc=f"Extracting top attention words for {target_word}",
-        total=len(clustered_embeddings_df),
+    new_df = pd.DataFrame(columns=clustered_embeddings_df.columns)
+    # for each sentence_index in the dataframe, get the attention weights
+    # of the context words towards the target word
+    for sentence_index in tqdm(
+        clustered_embeddings_df["sentence_index"].unique()
     ):
-        sentence = row["sentence"]
+        sentence = clustered_embeddings_df[
+            clustered_embeddings_df["sentence_index"] == sentence_index
+        ]["sentence"].values[0]
         for top_n_attention in get_top_n_attention_words_to_target(
             sentence, target_word, n=10  # Top 10 words
         ):
 
-            top_n_attention["sentence_index"] = sentence_number
-            top_n_attention["salience_score"] = "attention"
-            top_n_attention["sentence"] = sentence
-            top_n_attention["cluster_label"] = row["cluster_label"]
+            # add each word, attention as a row for the dataframe
+            for word, score in top_n_attention:
+                # with that sentence index, add a new row to the dataframe
+                row = clustered_embeddings_df.loc[
+                    clustered_embeddings_df["sentence_index"] == sentence_index
+                ].iloc[0]
+                row["word"] = word
+                row["salience_value"] = score
+                row["salience_score"] = "attention"
+                # concat
+                new_df = pd.concat([new_df, row.to_frame().T])
 
-            df_top_attention_all_sentences = pd.concat(
-                [
-                    df_top_attention_all_sentences,
-                    top_n_attention,
-                ]
-            )
-
-            sentence_number += 1
-
-    if store_csv:
-        df_top_attention_all_sentences.to_csv(
-            f"data/{target_word}_top_attention_words.csv",
-            sep="|",
-            index=False,
-        )
-        print(
-            f'Top attention words saved to "data/{target_word}_top_attention_words.csv"'
-        )
-
-    return df_top_attention_all_sentences
+    return new_df
 
 
 if __name__ == "__main__":

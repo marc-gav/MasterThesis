@@ -2,7 +2,7 @@ import csv
 import re
 from collections import defaultdict
 from pprint import pprint as pp
-from typing import Generator, Iterator
+from typing import Generator, Iterator, Union
 
 import matplotlib.pyplot as plt
 import nltk
@@ -301,7 +301,7 @@ def get_attention_to_target_word_in_sentence(
 
 def get_top_n_attention_words_to_target(
     sentence: str, target_word: str, n: int = -1
-) -> Iterator[pd.DataFrame]:
+) -> Iterator[list]:
     """Get the top n words that have the highest attention to the target word.
 
     Args:
@@ -316,51 +316,35 @@ def get_top_n_attention_words_to_target(
 
     (
         attention_matrix_per_word_ocurrence,
-        tokenized_text_without_target_words,
+        non_target_words,
     ) = get_attention_to_target_word_in_sentence(sentence, target_word)
 
-    for avg_attention_to_target in attention_matrix_per_word_ocurrence:
-        non_target_words = tokenized_text_without_target_words
-        df = pd.DataFrame(
-            {
-                "word": non_target_words,
-                "salience_value": avg_attention_to_target.squeeze().tolist(),
-            }
+    for attention_matrix in attention_matrix_per_word_ocurrence:
+
+        word_and_attention = list(zip(
+            non_target_words, attention_matrix.squeeze().tolist()
+        ))
+        word_and_attention = sorted(
+            word_and_attention, key=lambda x: x[1], reverse=True
         )
 
-        df = df.sort_values(by="salience_value", ascending=False)
-
-        if n > 0:
-            df = df[:n]
-
-        yield df
+        yield word_and_attention[:n]
 
 
 def extract_vector_hidden_state(
-    sentence: str, target_word: str
+    sentence_token_ids: torch.Tensor, target_word_token_ids: torch.Tensor
 ) -> list[torch.Tensor]:
     """Extract the target word vector hidden state from the last layer of the BERT model.
     In case multiple instances of the target word are found, the list will contain
     multiple vectors.
-
-    Args:
-        sentence (str): Sentence
-        target_word (str): Target word
 
     Returns:
         list[torch.Tensor]: List of vector hidden states, it is a list
         because more than one target word can appear in a sentence.
     """
 
-    # Extract token_ids of target_word
-    _, target_word_token_ids = bert_encode_text(
-        target_word, special_tokens=False
-    )
-
-    # Extract token_ids of sentence
-    _, sentence_token_ids = bert_encode_text(sentence, special_tokens=True)
-
     list_target_word_indices = []
+
     if len(target_word_token_ids.shape) == 0:  # Single token
         for i, token_id in enumerate(sentence_token_ids):
             if token_id == target_word_token_ids:

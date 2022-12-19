@@ -1,13 +1,10 @@
 import re
 from collections import defaultdict
-
+import torch
 import nltk
 import pandas as pd
-from bert_utils.bert_utils import (
-    bert_model,
-    bert_tokenizer,
+from bertologist.utils import (
     extract_vector_hidden_state,
-    split_into_sentences,
     target_word_is_in_sentence,
     bert_encode_text,
 )
@@ -15,7 +12,7 @@ from tqdm import tqdm
 
 
 def get_embeddings_from_target_word_in_sentences(
-    corpus: list[str], target_word: str, store_csv: bool = False
+    corpus: list[str], target_word: str
 ):
     """Extract the word embedding of the target word in each sentence. Return a
     list of tuples of the form (sentence, embedding). Can also store it in a csv
@@ -30,48 +27,51 @@ def get_embeddings_from_target_word_in_sentences(
     and their corresponding sentence
     """
 
-    # stores tuples of (sentence, word embedding vector)
-    sentence_and_target_word_vector = []
+    _, tokenized_target_word = bert_encode_text(
+        target_word, special_tokens=False
+    )
+    sentences = []
+    target_word_embeddings = []
+    sentences_with_target_word = [
+        target_word_is_in_sentence(sentence, target_word)
+        for sentence in tqdm(
+            corpus, desc="Filtering sentences with target word"
+        )
+    ]
 
-    for sentence in tqdm(corpus):
-        if not target_word_is_in_sentence(sentence, target_word):
-            continue
+    corpus_with_target_word = [
+        sentence
+        for sentence, target_word_present in zip(
+            corpus, sentences_with_target_word
+        )
+        if target_word_present
+    ]
 
-        _, bert_token_ids = bert_encode_text(sentence, special_tokens=True)
-        if len(bert_token_ids) > 512:
-            continue
+    print("Encoding sentences with BERT")
+    bert_encoded_corpus = [
+        (pos, bert_encode_text(sentence, special_tokens=True)[1])
+        for pos, sentence in enumerate(corpus_with_target_word)
+    ]
+    print(f"Sentences with BERT have been encoded")
 
-        # Extract hidden states from the last layer of the target word
-        # and the non-target words
-        target_word_vectors = extract_vector_hidden_state(sentence, target_word)
+    print("Filtering long sentences")
+    bert_encoded_corpus = [
+        (pos, bert_encoded_text_item)
+        for pos, bert_encoded_text_item in bert_encoded_corpus
+        if len(bert_encoded_text_item) <= 512
+    ]
+    print(f"Long sentences have been filtered")
+
+    for pos, tokenized_sentence in tqdm(
+        bert_encoded_corpus, desc="Extracting embeddings"
+    ):
+        target_word_vectors = extract_vector_hidden_state(
+            tokenized_sentence, tokenized_target_word
+        )
         for target_word_vector in target_word_vectors:
-            sentence_and_target_word_vector.append((sentence, target_word_vector))
+            target_word_embeddings.append(target_word_vector)
+            sentences.append(corpus_with_target_word[pos])
 
-    if store_csv:
-        # Convert target_word_vector to string
-        sentence_and_target_word_vector = [
-            (sentence, target_word_vector.tolist())
-            for sentence, target_word_vector in sentence_and_target_word_vector
-        ]
-        df = pd.DataFrame(
-            sentence_and_target_word_vector,
-            columns=["sentence", "target_word_vector"],
-        )
-
-        df.to_csv(
-            f"data/bert_embeddings_of_word_{target_word}_in_sentence.csv",
-            sep="|",
-        )
-
-        print(
-            f'Stored csv file "data/bert_embeddings_of_word_{target_word}_in_sentence.csv"'
-        )
-
-    return sentence_and_target_word_vector
-
-
-if __name__ == "__main__":
-    news_dataset = pd.read_json("data/News_Category_Dataset_v3.json", lines=True)
-    news_descriptions = news_dataset.short_description.tolist()
-
-    get_embeddings_from_target_word_in_sentences("one", news_descriptions)
+    # stack the embeddings
+    target_word_embeddings = torch.stack(target_word_embeddings).squeeze()
+    return target_word_embeddings, sentences

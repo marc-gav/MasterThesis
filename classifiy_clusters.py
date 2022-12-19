@@ -24,11 +24,23 @@ dataset = ClusteredWordsDataset(df=df)
 VOCAB_SIZE = dataset.get_vocab_size()
 NUM_CLUSTERS = dataset.get_num_clusters()
 
-TRAIN_DATASET, VAL_DATASET = split_dataset(dataset, [0.8, 0.2])
+train_split = 0.4
+val_split = 0.1
+leftovers = 1 - train_split - val_split
+TRAIN_DATASET, VAL_DATASET, _ = split_dataset(
+    dataset, [train_split, val_split, leftovers]
+)
 
 # Flatten the datapoints to fit them into the forward pass
 TRAIN_DATASET.data = TRAIN_DATASET.data.view(TRAIN_DATASET.data.shape[0], -1)
 VAL_DATASET.data = VAL_DATASET.data.view(VAL_DATASET.data.shape[0], -1)
+
+print(
+    f"Number of datapoints: {len(TRAIN_DATASET.data)}",
+    f"Size of each datapoint: {TRAIN_DATASET.data[0].nelement() * TRAIN_DATASET.data[0].element_size() / 1e6} MB",
+    f"Size of the whole dataset: {len(TRAIN_DATASET.data) * TRAIN_DATASET.data[0].nelement() * TRAIN_DATASET.data[0].element_size() / 1e9} GB",
+    sep="\n",
+)
 
 # Fix the seeds
 SEED = 42
@@ -47,30 +59,36 @@ def train_experiment():
     # it seems the shadiest implementation of an API I've ever seen
     wandb_logger = WandbLogger()
     model = ProbingClassifier(
-        run.config, vocab_size=VOCAB_SIZE, num_clusters=NUM_CLUSTERS
+        run.config,
+        input_size=TRAIN_DATASET.data[0].nelement(),
+        num_clusters=NUM_CLUSTERS,
     )
 
-    wandb.watch(model, log="all", log_freq=50, log_graph=True)
+    # print infomration about TRAIN_DATASET:
+    # number of datapoints
+    # size in memory (in MB) of each datapoint
+    # size in memory (in GB) of the whole dataset
+
+    # wandb.watch(model, log="all", log_freq=50, log_graph=True)
     train_dataloader = DataLoader(
         TRAIN_DATASET,
         batch_size=run.config["batch_size"],
-        shuffle=False,
-        num_workers=4,
+        shuffle=True,
     )
     val_dataloader = DataLoader(
         VAL_DATASET,
         batch_size=run.config["batch_size"],
         shuffle=False,
-        num_workers=4,
     )
     trainer = pl.Trainer(
         max_epochs=10000,
         logger=wandb_logger,
-        accelerator="gpu",
-        devices=1,
+        log_every_n_steps=1,
+        # accelerator="gpu",
+        # devices=1,
         callbacks=[
             pl.callbacks.EarlyStopping(
-                monitor="val_loss", patience=3, mode="min"
+                monitor="val_loss", patience=8, min_delta=0.01
             )
         ],
     )
@@ -95,4 +113,4 @@ def sweep():
 
 
 if __name__ == "__main__":
-    train_experiment()
+    sweep()

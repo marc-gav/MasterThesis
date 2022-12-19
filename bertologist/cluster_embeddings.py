@@ -5,7 +5,6 @@ import nltk
 import numpy as np
 import pandas as pd
 import yaml
-from sklearn.decomposition import PCA
 from tqdm import tqdm
 import mplcursors
 
@@ -67,7 +66,7 @@ def parse_arguments(parser: argparse.ArgumentParser) -> argparse.Namespace:
 def cluster_embeddings(
     embeddings: np.ndarray,
     method: str,
-    method_settings_file: str = "clustering_settings.yml",
+    method_settings_file: str = "experiments/clustering_settings.yml",
 ) -> np.ndarray:
     """Cluster the embeddings using the specified method.
 
@@ -125,6 +124,7 @@ def plot_embeddings(
     df_clustered: pd.DataFrame,
 ):
     _, ax = plt.subplots()
+
     ax.scatter(
         pca_embeddings[:, 0],
         pca_embeddings[:, 1],
@@ -152,6 +152,8 @@ def plot_embeddings(
 
     plt.tight_layout()
     plt.show()
+    # save to img
+    plt.savefig("data/training_.png")
 
 
 if __name__ == "__main__":
