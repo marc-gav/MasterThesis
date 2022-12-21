@@ -20,6 +20,9 @@ with open("experiments/sweep.yaml") as f:
 df = pd.read_csv(
     "datasets/training_dataset_light.csv", sep=",", index_col=False
 )
+
+df.sample(frac=0.1)
+
 dataset = ClusteredWordsDataset(df=df)
 VOCAB_SIZE = dataset.get_vocab_size()
 NUM_CLUSTERS = dataset.get_num_clusters()
