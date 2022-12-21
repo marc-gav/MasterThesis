@@ -13,7 +13,7 @@ import tqdm
 import transformers
 
 transformers.logging.set_verbosity_error()
-nltk.download("punkt")
+#nltk.download("punkt")
 NUM_AVERAGING_LAYERS = 4
 
 bert_tokenizer = transformers.BertTokenizer.from_pretrained(
