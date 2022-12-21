@@ -3,6 +3,7 @@ import torch
 from tqdm import tqdm
 from torch.utils.data import Dataset
 import os
+from typing import List, Tuple
 from bertologist.utils import (
     split_into_sentences,
 )
@@ -14,7 +15,7 @@ from multiprocessing import Pool, cpu_count
 from contextlib import closing
 
 
-def extract_news_headlines() -> list[str]:
+def extract_news_headlines() -> List[str]:
     data_dir = "datasets/news_headlines"
     file_name = "News_Category_Dataset_v3.json"
     kaggle_url = "rmisra/news-category-dataset"
@@ -47,7 +48,7 @@ def extract_news_headlines() -> list[str]:
     return sentences
 
 
-def extract_new_york_times_comments() -> list[str]:
+def extract_new_york_times_comments() -> List[str]:
     data_dir = "datasets/nyt_comments"
     kaggle_url = "aashita/nyt-comments"
     pickle_file = "nyt_comments_sentences.pickle"
@@ -104,7 +105,7 @@ def extract_new_york_times_comments() -> list[str]:
     return sentences
 
 
-def extract_tripadvisor_reviews() -> list[str]:
+def extract_tripadvisor_reviews() -> List[str]:
     data_dir = "datasets/tripadvisor_hotel_reviews.csv"
     url = "andrewmvd/trip-advisor-hotel-reviews"
     pickle_file = "tripadvisor_hotel_reviews_sentences.pickle"
@@ -135,7 +136,7 @@ def extract_tripadvisor_reviews() -> list[str]:
     return sentences
 
 
-def mental_disorders_dataset() -> list[str]:
+def mental_disorders_dataset() -> List[str]:
     data_dir = "datasets/mental_disorders_reddit"
     file_name = "mental_disorders_reddit.csv"
     kaggle_url = "kamaruladha/mental-disorders-identification-reddit-nlp"
@@ -164,7 +165,7 @@ def mental_disorders_dataset() -> list[str]:
     return sentences
 
 
-def clean_string(text: list[str]) -> list[str]:
+def clean_string(text: List[str]) -> List[str]:
     clean_sentences = []
     for sentence in tqdm(text):
         clean = cleantext.clean(
@@ -184,8 +185,8 @@ def clean_string(text: list[str]) -> list[str]:
     return clean_sentences
 
 
-def clean_dataset(dataset: list[str]) -> list[str]:
-    # search for elements of the list that are not strings
+def clean_dataset(dataset: List[str]) -> List[str]:
+    # search for elements of the List that are not strings
     dataset = [sentence for sentence in dataset if isinstance(sentence, str)]
 
     num_cpu = cpu_count()
@@ -214,7 +215,7 @@ def clean_dataset(dataset: list[str]) -> list[str]:
     return sentences
 
 
-def load_training_sentences() -> list[str]:
+def load_training_sentences() -> List[str]:
     pickle_file = "training_sentences.pickle"
 
     kaggle.api.authenticate()

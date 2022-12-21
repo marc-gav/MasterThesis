@@ -2,6 +2,7 @@ import re
 from collections import defaultdict
 import torch
 import nltk
+from typing import List, Tuple
 import pandas as pd
 from bertologist.utils import (
     extract_vector_hidden_state,
@@ -12,18 +13,18 @@ from tqdm import tqdm
 
 
 def get_embeddings_from_target_word_in_sentences(
-    corpus: list[str], target_word: str
+    corpus: List[str], target_word: str
 ):
     """Extract the word embedding of the target word in each sentence. Return a
-    list of tuples of the form (sentence, embedding). Can also store it in a csv
+    List of tuples of the form (sentence, embedding). Can also store it in a csv
     file.
 
     Args:
         target_word (str): Target word
-        corpus (list[str]): Corpus
+        corpus (List[str]): Corpus
 
     Returns:
-        list[Tuple[str, torch.Tensor]]: List of word embeddings
+        List[Tuple[str, torch.Tensor]]: List of word embeddings
     and their corresponding sentence
     """
 

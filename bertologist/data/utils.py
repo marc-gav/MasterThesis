@@ -2,9 +2,9 @@ import torch
 from bertologist.data.Datasets import ClusteredWordsDataset
 
 
-def split_dataset(dataset: ClusteredWordsDataset, split_values: list):
+def split_dataset(dataset: ClusteredWordsDataset, split_values: List):
     """Splits the dataset into multiple datasets based on the split_values.
-    The split_values should be a list of floats that sum to 1.
+    The split_values should be a List of floats that sum to 1.
     """
 
     assert sum(split_values) == 1, "The split values should sum to 1"

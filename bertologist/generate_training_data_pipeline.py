@@ -1,4 +1,5 @@
 import pandas as pd
+from typing import List, Tuple
 from bertologist.data.Datasets import (
     load_training_sentences,
 )
@@ -12,7 +13,7 @@ from sklearn.decomposition import PCA
 TARGET_WORD = "light"
 
 print("Loading training sentences")
-document_sentences: list[str] = load_training_sentences()
+document_sentences: List[str] = load_training_sentences()
 print(f"Training sentences have been loaded.")
 
 print("Extracting embeddings")

@@ -8,9 +8,9 @@ import wandb
 
 
 def log_extra_info(cluster_probabilities, labels, epoch, step):
-    probabilities = list(cluster_probabilities[0].detach().cpu().numpy())
-    labels = list(labels[0].detach().cpu().numpy())
-    cluster_nums = list(range(len(labels)))
+    probabilities = List(cluster_probabilities[0].detach().cpu().numpy())
+    labels = List(labels[0].detach().cpu().numpy())
+    cluster_nums = List(range(len(labels)))
     data = [
         [data_point[0], data_point[1], data_point[2]]
         for data_point in zip(probabilities, labels, cluster_nums)

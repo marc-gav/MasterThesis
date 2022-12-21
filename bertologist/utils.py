@@ -2,7 +2,7 @@ import csv
 import re
 from collections import defaultdict
 from pprint import pprint as pp
-from typing import Generator, Iterator, Union
+from typing import Generator, Iterator, Union, List, Tuple
 
 import matplotlib.pyplot as plt
 import nltk
@@ -25,14 +25,14 @@ bert_model = transformers.BertModel.from_pretrained(
 )
 
 
-def split_into_sentences(text: str) -> list[str]:
+def split_into_sentences(text: str) -> List[str]:
     """Split text into sentences.
 
     Args:
         text (str): Text to split
 
     Returns:
-        list[str]: List of sentences
+        List[str]: List of sentences
     """
     return nltk.sent_tokenize(text)
 
@@ -53,7 +53,7 @@ def target_word_is_in_sentence(sentence: str, target_word: str) -> bool:
 def bert_encode_text(
     text: str,
     special_tokens: bool,
-) -> tuple[list[str], torch.Tensor]:
+) -> tuple[List[str], torch.Tensor]:
     """Encode the text using BERT tokenizer
 
     Args:
@@ -61,8 +61,8 @@ def bert_encode_text(
         tokenizer (transformers.PreTrainedTokenizerFast): BERT tokenizer
         special_tokens (bool): Whether to add BERT special tokens or not
 
-    Returns tuple[list[str], torch.Tensor]: A tuple of:
-        - list[str]: Tokenized text
+    Returns tuple[List[str], torch.Tensor]: A tuple of:
+        - List[str]: Tokenized text
         - torch.Tensor: Token representation as BERT ids
     """
     batch_encoding_tokenized: transformers.BatchEncoding = bert_tokenizer(
@@ -106,7 +106,7 @@ def _extract_attention_averaging_layers_and_heads(
 
 def _average_attention_for_multiple_token_words(
     attention: torch.Tensor,
-    tokenized_text: list[str],
+    tokenized_text: List[str],
 ) -> torch.Tensor:
     """Averages the attention for multiple token words. This is done by
     averaging the rows and columns that are spanned by the multiple
@@ -115,7 +115,7 @@ def _average_attention_for_multiple_token_words(
 
     Args:
         attention (torch.Tensor): Attention matrix
-        tokenized_text (list[str]): Tokenized text
+        tokenized_text (List[str]): Tokenized text
 
     Returns:
         torch.Tensor: Averaged attention matrix
@@ -134,8 +134,8 @@ def _average_attention_for_multiple_token_words(
 
 
 def _create_target_word_mask(
-    tokenized_text: list[str], target_word: str
-) -> tuple[torch.Tensor, list[str]]:
+    tokenized_text: List[str], target_word: str
+) -> tuple[torch.Tensor, List[str]]:
     """Create a mask for the target word where everything is false except
     the target word.
 
@@ -149,9 +149,9 @@ def _create_target_word_mask(
         target_word (str): Target word
 
     Returns:
-        tuple[torch.Tensor, list[str]]: A tuple of:
+        tuple[torch.Tensor, List[str]]: A tuple of:
             - torch.Tensor: Mask for the target word
-            - list[str]: Tokenized text
+            - List[str]: Tokenized text
     """
 
     sentence_list = []
@@ -173,8 +173,8 @@ def _create_target_word_mask(
 def _extract_attention_to_target(
     avg_attention: torch.Tensor,
     target_word_mask: torch.Tensor,
-    sentence_words_list: list[str],
-) -> tuple[torch.Tensor, list[str]]:
+    sentence_words_list: List[str],
+) -> tuple[torch.Tensor, List[str]]:
     """Extract the attention of other words to the target word. If multiple instances of the
     target word are present, expect multiple columns in the attention to target word tensor.
 
@@ -187,12 +187,12 @@ def _extract_attention_to_target(
     Args:
         avg_attention (torch.Tensor): Averaged attention matrix
         target_word_mask (torch.Tensor): Mask for the target word
-        sentence_words_list (list[str]): Words of the sentence and special tokens
+        sentence_words_list (List[str]): Words of the sentence and special tokens
 
     Returns:
-        tuple[torch.Tensor, list[str]]: A tuple of:
+        tuple[torch.Tensor, List[str]]: A tuple of:
             - torch.Tensor: Attention to the target word
-            - list[str]: Sentence without the target words
+            - List[str]: Sentence without the target words
     """
 
     target_indices = torch.nonzero(target_word_mask).squeeze()
@@ -216,12 +216,12 @@ def _extract_attention_to_target(
 
 
 def _create_multiple_word_token_mask(
-    tokenized_text: list[str],
+    tokenized_text: List[str],
 ) -> torch.Tensor:
     """Create a mask for the tokens that are part of a multiple word token.
 
     Args:
-        tokenized_text (list[str]): Tokenized text
+        tokenized_text (List[str]): Tokenized text
 
     Returns:
         torch.Tensor: Mask for the tokens that are part of a multiple word token
@@ -254,7 +254,7 @@ def _create_multiple_word_token_mask(
 
 def get_attention_to_target_word_in_sentence(
     sentence: str, target_word: str
-) -> tuple[torch.Tensor, list[str]]:
+) -> tuple[torch.Tensor, List[str]]:
     """Get the attention of other words to the target word in a sentence.
 
     Args:
@@ -262,9 +262,9 @@ def get_attention_to_target_word_in_sentence(
         target_word (str): Target word
 
     Returns:
-        tuple[torch.Tensor, list[str]]: A tuple of:
+        tuple[torch.Tensor, List[str]]: A tuple of:
             - torch.Tensor: Attention to the target word
-            - list[str]: Sentence without the target words
+            - List[str]: Sentence without the target words
     """
 
     tokenized_text, text_bert_ids = bert_encode_text(
@@ -301,7 +301,7 @@ def get_attention_to_target_word_in_sentence(
 
 def get_top_n_attention_words_to_target(
     sentence: str, target_word: str, n: int = -1
-) -> Iterator[list]:
+) -> Iterator[List]:
     """Get the top n words that have the highest attention to the target word.
 
     Args:
@@ -311,7 +311,7 @@ def get_top_n_attention_words_to_target(
 
     Yields for each occurence of the target word in the sentence:
         pd.DataFrame: Dataframe with the top n words,
-            one list element per occurrence of the target word in the sentence.
+            one List element per occurrence of the target word in the sentence.
     """
 
     (
@@ -321,9 +321,9 @@ def get_top_n_attention_words_to_target(
 
     for attention_matrix in attention_matrix_per_word_ocurrence:
 
-        word_and_attention = list(zip(
-            non_target_words, attention_matrix.squeeze().tolist()
-        ))
+        word_and_attention = List(
+            zip(non_target_words, attention_matrix.squeeze().tolist())
+        )
         word_and_attention = sorted(
             word_and_attention, key=lambda x: x[1], reverse=True
         )
@@ -333,13 +333,13 @@ def get_top_n_attention_words_to_target(
 
 def extract_vector_hidden_state(
     sentence_token_ids: torch.Tensor, target_word_token_ids: torch.Tensor
-) -> list[torch.Tensor]:
+) -> List[torch.Tensor]:
     """Extract the target word vector hidden state from the last layer of the BERT model.
-    In case multiple instances of the target word are found, the list will contain
+    In case multiple instances of the target word are found, the List will contain
     multiple vectors.
 
     Returns:
-        list[torch.Tensor]: List of vector hidden states, it is a list
+        List[torch.Tensor]: List of vector hidden states, it is a List
         because more than one target word can appear in a sentence.
     """
 
@@ -360,7 +360,7 @@ def extract_vector_hidden_state(
             ):
                 list_target_word_indices.append(
                     torch.tensor(
-                        [list(range(i, i + len(target_word_token_ids)))]
+                        [List(range(i, i + len(target_word_token_ids)))]
                     )
                 )
 
