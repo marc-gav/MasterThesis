@@ -273,7 +273,7 @@ class ClusteredWordsDataset(Dataset):
     def __len__(self) -> int:
         return len(self.data)
 
-    def __getitem__(self, idx: int) -> tuple[torch.Tensor, torch.Tensor]:
+    def __getitem__(self, idx: int) -> Tuple[torch.Tensor, torch.Tensor]:
         return self.data[idx], self.labels[idx]
 
     def get_vocab_size(self) -> int:
