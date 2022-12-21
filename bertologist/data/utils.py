@@ -1,5 +1,6 @@
 import torch
 from bertologist.data.Datasets import ClusteredWordsDataset
+from typing import List, Tuple
 
 
 def split_dataset(dataset: ClusteredWordsDataset, split_values: List):
