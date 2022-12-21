@@ -21,7 +21,7 @@ df = pd.read_csv(
     "datasets/training_dataset_light.csv", sep=",", index_col=False
 )
 
-df.sample(frac=0.1)
+df.sample(frac=0.01)
 
 dataset = ClusteredWordsDataset(df=df)
 VOCAB_SIZE = dataset.get_vocab_size()
