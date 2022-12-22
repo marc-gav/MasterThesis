@@ -17,15 +17,15 @@ with open("experiments/config.yaml") as f:
 with open("experiments/sweep.yaml") as f:
     SWEEP_CONFIG = yaml.load(f, Loader=yaml.FullLoader)
 
-# only necessary cols
+# read only 50% of the dataset
 df = pd.read_csv(
     "datasets/training_dataset_light.csv",
     sep=",",
     index_col=False,
-    usecols=["word", "sentence_index", "cluster_label"],
+    usecols=["word", "sentence_index", "cluster_label", "salience_value"],
 )
 
-df.sample(frac=0.01)
+df = df.sample(frac=0.01)
 
 dataset = ClusteredWordsDataset(df=df)
 VOCAB_SIZE = dataset.get_vocab_size()
