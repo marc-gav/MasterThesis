@@ -1,5 +1,5 @@
 import re
-from typing import List, Tuple
+
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 # load local model
@@ -11,12 +11,12 @@ tokenizer = AutoTokenizer.from_pretrained(
 )
 
 
-def create_query(target_word: str, senses: List[str], context: str) -> str:
+def create_query(target_word: str, senses: list[str], context: str) -> str:
     """Create a query for the T5 sense disambiguation model.
 
     Args:
         target_word (str): The target_word to disambiguate.
-        senses (List[str]): A List of senses for the target_word.
+        senses (list[str]): A list of senses for the target_word.
         context (str): The context in which the target_word appears.
 
     Returns:
@@ -35,12 +35,12 @@ def create_query(target_word: str, senses: List[str], context: str) -> str:
     return query
 
 
-def label_word_sense(target_word: str, senses: List[str], context: str) -> int:
+def label_word_sense(target_word: str, senses: list[str], context: str) -> int:
     """Label the sense of a target_word in a given context.
 
     Args:
         target_word (str): The target_word to disambiguate.
-        senses (List[str]): A List of senses for the target_word.
+        senses (list[str]): A list of senses for the target_word.
         context (str): The context in which the target_word appears.
 
     Returns:
