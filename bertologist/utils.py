@@ -2,7 +2,7 @@ import csv
 import re
 from collections import defaultdict
 from pprint import pprint as pp
-from typing import Generator, Iterator, Union, list, tuple
+from typing import Generator, Iterator, Union, List, Tuple
 
 import matplotlib.pyplot as plt
 import nltk
@@ -13,7 +13,7 @@ import tqdm
 import transformers
 
 transformers.logging.set_verbosity_error()
-#nltk.download("punkt")
+# nltk.download("punkt")
 NUM_AVERAGING_LAYERS = 4
 
 bert_tokenizer = transformers.BertTokenizer.from_pretrained(
