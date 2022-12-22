@@ -17,8 +17,12 @@ with open("experiments/config.yaml") as f:
 with open("experiments/sweep.yaml") as f:
     SWEEP_CONFIG = yaml.load(f, Loader=yaml.FullLoader)
 
+# only necessary cols
 df = pd.read_csv(
-    "datasets/training_dataset_light.csv", sep=",", index_col=False
+    "datasets/training_dataset_light.csv",
+    sep=",",
+    index_col=False,
+    usecols=["word", "sentence_index", "cluster_label"],
 )
 
 df.sample(frac=0.01)
@@ -27,11 +31,10 @@ dataset = ClusteredWordsDataset(df=df)
 VOCAB_SIZE = dataset.get_vocab_size()
 NUM_CLUSTERS = dataset.get_num_clusters()
 
-train_split = 0.4
-val_split = 0.1
-leftovers = 1 - train_split - val_split
+train_split = 0.8
+val_split = 0.2
 TRAIN_DATASET, VAL_DATASET, _ = split_dataset(
-    dataset, [train_split, val_split, leftovers]
+    dataset, [train_split, val_split]
 )
 
 # Flatten the datapoints to fit them into the forward pass
