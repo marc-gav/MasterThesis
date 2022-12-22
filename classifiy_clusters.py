@@ -33,9 +33,7 @@ NUM_CLUSTERS = dataset.get_num_clusters()
 
 train_split = 0.8
 val_split = 0.2
-TRAIN_DATASET, VAL_DATASET, _ = split_dataset(
-    dataset, [train_split, val_split]
-)
+TRAIN_DATASET, VAL_DATASET = split_dataset(dataset, [train_split, val_split])
 
 # Flatten the datapoints to fit them into the forward pass
 TRAIN_DATASET.data = TRAIN_DATASET.data.view(TRAIN_DATASET.data.shape[0], -1)
