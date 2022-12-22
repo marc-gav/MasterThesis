@@ -283,6 +283,7 @@ class ClusteredWordsDataset(Dataset):
         return self.labels.shape[1]
 
     def df_init(self, df):
+        top_n_words = 5
         word_to_idx: dict[str, int] = {}
         for word in df["word"]:
             if word not in word_to_idx:
@@ -290,7 +291,7 @@ class ClusteredWordsDataset(Dataset):
         vocab_size = len(word_to_idx)
 
         self.sentences = df["sentence_index"].unique()
-        self.data = torch.zeros((len(self.sentences), 10, vocab_size))
+        self.data = torch.zeros((len(self.sentences), top_n_words, vocab_size))
         self.labels = torch.zeros((len(self.sentences)), dtype=torch.long)
 
         # We use two different indices because we don't trust the data.
@@ -307,9 +308,9 @@ class ClusteredWordsDataset(Dataset):
             cluster_value = sentence_df["cluster_label"].values[0]
 
             one_hot_matrix = torch.zeros(
-                (10, vocab_size)
-            )  # Fixed size 10. If the sentence is shorter, the rest is implicitly padded with 0s
-            for i, word in enumerate(words):
+                (top_n_words, vocab_size)
+            )  # Fixed size top_n_words. If the sentence is shorter, the rest is implicitly padded with 0s
+            for i, word in enumerate(words[:top_n_words]):
                 attention = sentence_df["salience_value"].values[i]
                 one_hot_matrix[i, word_to_idx[word]] = attention
             self.data[sentence_num, :, :] = one_hot_matrix
