@@ -55,7 +55,7 @@ class BaseProbingClassifier(pl.LightningModule):
 
         # log accuracy
         preds = cluster_probabilities.argmax(dim=1)
-        acc = (preds == labels).float().mean()
+        acc = (preds == labels.argmax(dim=1)).float().mean()
         self.log("train_acc", acc)
         self.log("train_loss", loss)
         return loss
@@ -67,7 +67,7 @@ class BaseProbingClassifier(pl.LightningModule):
 
         # log accuracy
         preds = cluster_probabilities.argmax(dim=1)
-        acc = (preds == labels).float().mean()
+        acc = (preds == labels.argmax(dim=1)).float().mean()
         self.log("val_acc", acc)
         self.log("val_loss", loss)
         return loss
