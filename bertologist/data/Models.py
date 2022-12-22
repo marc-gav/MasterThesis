@@ -52,6 +52,11 @@ class BaseProbingClassifier(pl.LightningModule):
                 self.global_step,
             )
         loss = nn.functional.cross_entropy(cluster_probabilities, labels)
+
+        # log accuracy
+        preds = cluster_probabilities.argmax(dim=1)
+        acc = (preds == labels).float().mean()
+        self.log("train_acc", acc)
         self.log("train_loss", loss)
         return loss
 
@@ -59,6 +64,11 @@ class BaseProbingClassifier(pl.LightningModule):
         x, labels = batch
         cluster_probabilities = self(x)
         loss = nn.functional.cross_entropy(cluster_probabilities, labels)
+
+        # log accuracy
+        preds = cluster_probabilities.argmax(dim=1)
+        acc = (preds == labels).float().mean()
+        self.log("val_acc", acc)
         self.log("val_loss", loss)
         return loss
 
