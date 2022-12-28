@@ -25,15 +25,15 @@ df = pd.read_csv(
     usecols=["word", "sentence_index", "cluster_label", "salience_value"],
 )
 
-FRAC = input("Enter the fraction of the dataset to use: [0, 1]")
+FRAC = int(input("Enter the fraction of the dataset to use: [0, 1]: "))
 df = df.sample(frac=FRAC, random_state=42)
 
 dataset = ClusteredWordsDataset(df=df)
 VOCAB_SIZE = dataset.get_vocab_size()
 NUM_CLUSTERS = dataset.get_num_clusters()
 
-TRAIN_SPLIT = input("Enter the train split: [0, 1]")
-VAL_SPLIT = input("Enter the validation split: [0, 1]")
+TRAIN_SPLIT = int(input("Enter the train split: [0, 1]: "))
+VAL_SPLIT = int(input("Enter the validation split: [0, 1]: "))
 TRAIN_DATASET, VAL_DATASET = split_dataset(dataset, [TRAIN_SPLIT, VAL_SPLIT])
 
 # normalize data
