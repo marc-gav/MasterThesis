@@ -102,8 +102,8 @@ def train_experiment():
         max_epochs=10000,
         logger=wandb_logger,
         log_every_n_steps=1,
-        # accelerator="gpu",
-        # devices=1,
+        accelerator="gpu",
+        devices=1,
         callbacks=[
             pl.callbacks.EarlyStopping(
                 monitor="val_loss", patience=8, min_delta=0.01
