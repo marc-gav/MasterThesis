@@ -7,7 +7,7 @@ import pandas as pd
 import wandb
 
 
-def log_extra_info(cluster_probabilities, labels, epoch, step):
+def log_extra_info(cluster_probabilities, labels, epoch, step, train_val):
     probabilities = list(cluster_probabilities[0].detach().cpu().numpy())
     labels = list(labels[0].detach().cpu().numpy())
     cluster_nums = list(range(len(labels)))
@@ -20,7 +20,7 @@ def log_extra_info(cluster_probabilities, labels, epoch, step):
     )
     wandb.log(
         {
-            "cluster_probabilities_barchart": wandb.plot.bar(
+            f"cluster_probabilities_barchart_{train_val}": wandb.plot.bar(
                 table, "cluster_num", "probability"
             )
         }
@@ -45,6 +45,17 @@ class BaseProbingClassifier(pl.LightningModule):
         cluster_probabilities = self(x)
         loss = nn.functional.cross_entropy(cluster_probabilities, labels)
 
+        # every 5 epochs, log the cluster probabilities
+        current_epoch = self.current_epoch
+        if current_epoch % 5 == 0 and batch_idx == 0:
+            log_extra_info(
+                cluster_probabilities,
+                labels,
+                self.current_epoch,
+                batch_idx,
+                "train",
+            )
+
         # log accuracy
         preds = cluster_probabilities.argmax(dim=1)
         acc = (preds == labels.argmax(dim=1)).float().mean()
@@ -56,6 +67,16 @@ class BaseProbingClassifier(pl.LightningModule):
         x, labels = batch
         cluster_probabilities = self(x)
         loss = nn.functional.cross_entropy(cluster_probabilities, labels)
+
+        current_epoch = self.current_epoch
+        if current_epoch % 5 == 0 and batch_idx == 0:
+            log_extra_info(
+                cluster_probabilities,
+                labels,
+                self.current_epoch,
+                batch_idx,
+                "val",
+            )
 
         # log accuracy
         preds = cluster_probabilities.argmax(dim=1)
@@ -83,9 +104,15 @@ class ProbingClassifier(BaseProbingClassifier):
             hyperparams, num_clusters=num_clusters, input_size=input_size
         )
 
-        # add 2 layers
-        self.fc1 = nn.Linear(input_size, num_clusters)
+        # 3 layers with regularization
+        self.fc1 = nn.Linear(input_size, 512)
+        self.fc2 = nn.Linear(512, 256)
+        self.fc3 = nn.Linear(256, num_clusters)
 
     def forward(self, x):
-        x = self.fc1(x)
+        x = F.relu(self.fc1(x))
+        x = F.dropout(x, p=0.5, training=self.training)
+        x = F.relu(self.fc2(x))
+        x = F.dropout(x, p=0.5, training=self.training)
+        x = self.fc3(x)
         return x
