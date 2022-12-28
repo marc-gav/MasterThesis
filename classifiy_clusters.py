@@ -25,7 +25,8 @@ df = pd.read_csv(
     usecols=["word", "sentence_index", "cluster_label", "salience_value"],
 )
 
-df = df.sample(frac=0.5, random_state=42)
+FRAC = input("Enter the fraction of the dataset to use: [0, 1]")
+df = df.sample(frac=FRAC, random_state=42)
 
 dataset = ClusteredWordsDataset(df=df)
 VOCAB_SIZE = dataset.get_vocab_size()
@@ -67,6 +68,7 @@ def train_experiment():
     wandb_logger = WandbLogger()
 
     # log architecture type
+    wandb.run.summary["dataset_fraction"] = FRAC
     architecture = input("Enter the architecture type: ")
     wandb.run.summary["architecture"] = architecture
 
