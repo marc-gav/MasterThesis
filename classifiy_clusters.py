@@ -25,6 +25,7 @@ df = pd.read_csv(
     usecols=["word", "sentence_index", "cluster_label", "salience_value"],
 )
 
+ARCHITECTURE = input("Enter the architecture type: ")
 FRAC = float(input("Enter the fraction of the dataset to use: [0, 1]: "))
 df = df.sample(frac=FRAC, random_state=42)
 
@@ -69,8 +70,7 @@ def train_experiment():
 
     # log architecture type
     wandb.run.summary["dataset_fraction"] = FRAC
-    architecture = input("Enter the architecture type: ")
-    wandb.run.summary["architecture"] = architecture
+    wandb.run.summary["architecture"] = ARCHITECTURE
 
     # log train and val splits
     wandb.run.summary["train_split"] = TRAIN_SPLIT
