@@ -43,14 +43,6 @@ class BaseProbingClassifier(pl.LightningModule):
     def training_step(self, batch, batch_idx):
         x, labels = batch
         cluster_probabilities = self(x)
-        # every 50 epochs
-        if self.current_epoch % 5 == 0 and batch_idx == 0:
-            log_extra_info(
-                cluster_probabilities,
-                labels,
-                self.current_epoch,
-                self.global_step,
-            )
         loss = nn.functional.cross_entropy(cluster_probabilities, labels)
 
         # log accuracy
@@ -91,11 +83,9 @@ class ProbingClassifier(BaseProbingClassifier):
             hyperparams, num_clusters=num_clusters, input_size=input_size
         )
 
-        self.fc1 = nn.Linear(input_size, 1024)
-        self.fc2 = nn.Linear(1024, num_clusters)
+        # add 2 layers
+        self.fc1 = nn.Linear(input_size, num_clusters)
 
     def forward(self, x):
         x = self.fc1(x)
-        x = F.relu(x)
-        x = self.fc2(x)
         return x

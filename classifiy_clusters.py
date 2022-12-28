@@ -25,15 +25,18 @@ df = pd.read_csv(
     usecols=["word", "sentence_index", "cluster_label", "salience_value"],
 )
 
-df = df.sample(frac=0.01)
+df = df.sample(frac=0.5, random_state=42)
 
 dataset = ClusteredWordsDataset(df=df)
 VOCAB_SIZE = dataset.get_vocab_size()
 NUM_CLUSTERS = dataset.get_num_clusters()
 
-train_split = 0.8
-val_split = 0.2
-TRAIN_DATASET, VAL_DATASET = split_dataset(dataset, [train_split, val_split])
+TRAIN_SPLIT = 0.8
+VAL_SPLIT = 0.2
+TRAIN_DATASET, VAL_DATASET = split_dataset(dataset, [TRAIN_SPLIT, VAL_SPLIT])
+
+# normalize data
+
 
 # Flatten the datapoints to fit them into the forward pass
 TRAIN_DATASET.data = TRAIN_DATASET.data.view(TRAIN_DATASET.data.shape[0], -1)
@@ -62,6 +65,15 @@ def train_experiment():
     )  # config param gets ignored if its a sweep. Idk what to say,
     # it seems the shadiest implementation of an API I've ever seen
     wandb_logger = WandbLogger()
+
+    # log architecture type
+    architecture = input("Enter the architecture type: ")
+    wandb.run.summary["architecture"] = architecture
+
+    # log train and val splits
+    wandb.run.summary["train_split"] = TRAIN_SPLIT
+    wandb.run.summary["val_split"] = VAL_SPLIT
+
     model = ProbingClassifier(
         run.config,
         input_size=TRAIN_DATASET.data[0].nelement(),
@@ -108,8 +120,8 @@ def train_experiment():
 def sweep():
     """Runs a sweep on the model"""
 
-    project_name = input("Enter the wandb project name: ")
-    sweep_id = wandb.sweep(SWEEP_CONFIG, project=project_name)
+    sweep_id = wandb.sweep(SWEEP_CONFIG, project="Master Thesis")
+
     wandb.agent(
         sweep_id,
         function=train_experiment,
