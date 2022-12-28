@@ -31,8 +31,8 @@ dataset = ClusteredWordsDataset(df=df)
 VOCAB_SIZE = dataset.get_vocab_size()
 NUM_CLUSTERS = dataset.get_num_clusters()
 
-TRAIN_SPLIT = 0.8
-VAL_SPLIT = 0.2
+TRAIN_SPLIT = input("Enter the train split: [0, 1]")
+VAL_SPLIT = input("Enter the validation split: [0, 1]")
 TRAIN_DATASET, VAL_DATASET = split_dataset(dataset, [TRAIN_SPLIT, VAL_SPLIT])
 
 # normalize data
