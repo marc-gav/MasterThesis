@@ -283,7 +283,7 @@ class ClusteredWordsDataset(Dataset):
         return self.labels.shape[1]
 
     def get_class_freq(self) -> torch.Tensor:
-        labels = self.labels.int()
+        labels = self.labels.clone().detach().int()
         # convert binary arrays to 1D, indicating the position of the 1
         labels = torch.argmax(labels, dim=1)
         # send to device

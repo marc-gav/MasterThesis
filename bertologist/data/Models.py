@@ -47,9 +47,6 @@ class BaseProbingClassifier(pl.LightningModule):
         x, labels = batch
         cluster_probabilities = self(x)
 
-        # de-biass
-        cluster_probabilities = cluster_probabilities * self.class_weights
-
         loss = nn.functional.cross_entropy(cluster_probabilities, labels)
 
         # every 5 epochs, log the cluster probabilities
@@ -127,4 +124,10 @@ class ProbingClassifier(BaseProbingClassifier):
 
     def forward(self, x):
         x = self.fc1(x)
+        x = F.relu(x)
+        x = self.fc2(x)
+        x = F.relu(x)
+        x = self.fc3(x)
+        # debias
+        x = x * self.class_weights
         return x
