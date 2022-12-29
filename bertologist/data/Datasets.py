@@ -290,7 +290,7 @@ class ClusteredWordsDataset(Dataset):
         return torch.bincount(labels)
 
     def df_init(self, df):
-        top_n_words = 5
+        top_n_words = 10
         word_to_idx: dict[str, int] = {}
         for word in df["word"]:
             if word not in word_to_idx:
