@@ -30,11 +30,14 @@ def log_extra_info(cluster_probabilities, labels, epoch, step, train_val):
 
 
 class BaseProbingClassifier(pl.LightningModule):
-    def __init__(self, hyperparams: Config, input_size, num_clusters):
+    def __init__(
+        self, hyperparams: Config, input_size, num_clusters, class_weights
+    ):
         super().__init__()
         self.hyperparams = hyperparams
 
         self.input_size = input_size
+        self.class_weights = class_weights
         self.num_clusters = num_clusters
 
     def forward(self, x):
@@ -43,6 +46,10 @@ class BaseProbingClassifier(pl.LightningModule):
     def training_step(self, batch, batch_idx):
         x, labels = batch
         cluster_probabilities = self(x)
+
+        # de-biass
+        cluster_probabilities = cluster_probabilities * self.class_weights
+
         loss = nn.functional.cross_entropy(cluster_probabilities, labels)
 
         # every 5 epochs, log the cluster probabilities
@@ -66,6 +73,10 @@ class BaseProbingClassifier(pl.LightningModule):
     def validation_step(self, batch, batch_idx):
         x, labels = batch
         cluster_probabilities = self(x)
+
+        # de-biass
+        cluster_probabilities = cluster_probabilities * self.class_weights
+
         loss = nn.functional.cross_entropy(cluster_probabilities, labels)
 
         current_epoch = self.current_epoch
@@ -99,20 +110,21 @@ class BaseProbingClassifier(pl.LightningModule):
 
 
 class ProbingClassifier(BaseProbingClassifier):
-    def __init__(self, hyperparams: Config, input_size, num_clusters):
+    def __init__(
+        self, hyperparams: Config, input_size, num_clusters, class_weights
+    ):
         super().__init__(
-            hyperparams, num_clusters=num_clusters, input_size=input_size
+            hyperparams,
+            num_clusters=num_clusters,
+            input_size=input_size,
+            class_weights=class_weights,
         )
 
         # 3 layers with regularization
-        self.fc1 = nn.Linear(input_size, 512)
+        self.fc1 = nn.Linear(input_size, num_clusters)
         self.fc2 = nn.Linear(512, 256)
         self.fc3 = nn.Linear(256, num_clusters)
 
     def forward(self, x):
-        x = F.relu(self.fc1(x))
-        x = F.dropout(x, p=0.5, training=self.training)
-        x = F.relu(self.fc2(x))
-        x = F.dropout(x, p=0.5, training=self.training)
-        x = self.fc3(x)
+        x = self.fc1(x)
         return x

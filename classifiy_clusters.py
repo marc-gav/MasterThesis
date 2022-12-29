@@ -27,18 +27,24 @@ df = pd.read_csv(
 
 ARCHITECTURE = input("Enter the architecture type: ")
 FRAC = float(input("Enter the fraction of the dataset to use: [0, 1]: "))
-df = df.sample(frac=FRAC, random_state=42)
 
-dataset = ClusteredWordsDataset(df=df)
+# sample some percentage of the sentences
+unique_sentences = df["sentence_index"].unique()
+sampled_sentences = np.random.choice(
+    unique_sentences, int(len(unique_sentences) * FRAC), replace=False
+)
+
+sampled_df = df[df["sentence_index"].isin(sampled_sentences)]
+dataset = ClusteredWordsDataset(df=sampled_df)
 VOCAB_SIZE = dataset.get_vocab_size()
 NUM_CLUSTERS = dataset.get_num_clusters()
 
-TRAIN_SPLIT = float(input("Enter the train split: [0, 1]: "))
-VAL_SPLIT = float(input("Enter the validation split: [0, 1]: "))
+TRAIN_SPLIT = 0.8
+VAL_SPLIT = 0.2
 TRAIN_DATASET, VAL_DATASET = split_dataset(dataset, [TRAIN_SPLIT, VAL_SPLIT])
 
-# normalize data
-
+# class frequency of TRAIN_DATASET
+CLASS_FREQ = TRAIN_DATASET.get_class_freq()
 
 # Flatten the datapoints to fit them into the forward pass
 TRAIN_DATASET.data = TRAIN_DATASET.data.view(TRAIN_DATASET.data.shape[0], -1)
@@ -61,12 +67,22 @@ np.random.seed(SEED)
 
 
 def train_experiment():
+
+    # the dataset is biased for some classes more than others
+    # so we need to weight the loss function accordingly
+    # this is done by computing the inverse of the class frequencies
+    # and then normalizing the weights so that they sum to 1
+    class_weights = 1 / torch.tensor(CLASS_FREQ, dtype=torch.float)
+
     """Trains the model and logs the results to wandb"""
     run = wandb.init(
         config=RUN_CONFIG
     )  # config param gets ignored if its a sweep. Idk what to say,
     # it seems the shadiest implementation of an API I've ever seen
     wandb_logger = WandbLogger()
+
+    # one batch
+    batch_size = run.config["batch_size"]
 
     # log architecture type
     wandb.run.summary["dataset_fraction"] = FRAC
@@ -80,6 +96,7 @@ def train_experiment():
         run.config,
         input_size=TRAIN_DATASET.data[0].nelement(),
         num_clusters=NUM_CLUSTERS,
+        class_weights=class_weights,
     )
 
     # print infomration about TRAIN_DATASET:

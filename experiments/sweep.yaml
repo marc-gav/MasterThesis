@@ -8,6 +8,6 @@ parameters:
     min: 0.001
     max: 0.1
   optimizer:
-    values: ["adam", "sgd"]
+    values: ["adam"]
   batch_size:
-    values: [32, 64, 128]
+    values: [32, 64]

@@ -282,6 +282,13 @@ class ClusteredWordsDataset(Dataset):
     def get_num_clusters(self) -> int:
         return self.labels.shape[1]
 
+    def get_class_freq(self) -> torch.Tensor:
+        # temporarily convert to int
+        labels = self.labels.cpu().int()
+        # convert binary arrays to 1D, indicating the position of the 1
+        labels = torch.argmax(labels, dim=1)
+        return torch.bincount(labels)
+
     def df_init(self, df):
         top_n_words = 5
         word_to_idx: dict[str, int] = {}
