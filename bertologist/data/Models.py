@@ -118,7 +118,7 @@ class ProbingClassifier(BaseProbingClassifier):
         )
 
         # 3 layers with regularization
-        self.fc1 = nn.Linear(input_size, num_clusters)
+        self.fc1 = nn.Linear(input_size, 512)
         self.fc2 = nn.Linear(512, 256)
         self.fc3 = nn.Linear(256, num_clusters)
 
