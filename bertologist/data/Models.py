@@ -30,14 +30,11 @@ def log_extra_info(cluster_probabilities, labels, epoch, step, train_val):
 
 
 class BaseProbingClassifier(pl.LightningModule):
-    def __init__(
-        self, hyperparams: Config, input_size, num_clusters, class_weights
-    ):
+    def __init__(self, hyperparams: Config, input_size, num_clusters):
         super().__init__()
         self.hyperparams = hyperparams
 
         self.input_size = input_size
-        self.class_weights = class_weights.to(self.device)
         self.num_clusters = num_clusters
 
     def forward(self, x):
@@ -114,8 +111,8 @@ class ProbingClassifier(BaseProbingClassifier):
             hyperparams,
             num_clusters=num_clusters,
             input_size=input_size,
-            class_weights=class_weights,
         )
+        self.class_weights = class_weights.to(self.device)
 
         # 3 layers with regularization
         self.fc1 = nn.Linear(input_size, 512)
