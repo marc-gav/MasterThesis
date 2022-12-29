@@ -27,6 +27,7 @@ df = pd.read_csv(
 
 ARCHITECTURE = input("Enter the architecture type: ")
 FRAC = float(input("Enter the fraction of the dataset to use: [0, 1]: "))
+ACCELERATOR = input("Enter the accelerator type: ")
 
 # sample some percentage of the sentences
 unique_sentences = df["sentence_index"].unique()
@@ -73,6 +74,11 @@ def train_experiment():
     # this is done by computing the inverse of the class frequencies
     # and then normalizing the weights so that they sum to 1
     class_weights = 1 / torch.tensor(CLASS_FREQ, dtype=torch.float)
+    
+    # send class weights to the GPU
+    if ACCELERATOR == 'gpu':
+        class_weights = class_weights.cuda()
+    
 
     """Trains the model and logs the results to wandb"""
     run = wandb.init(
@@ -115,11 +121,12 @@ def train_experiment():
         batch_size=run.config["batch_size"],
         shuffle=False,
     )
+
     trainer = pl.Trainer(
         max_epochs=10000,
         logger=wandb_logger,
         log_every_n_steps=1,
-        accelerator="gpu",
+        accelerator=accelerator,
         devices=1,
         callbacks=[
             pl.callbacks.EarlyStopping(
