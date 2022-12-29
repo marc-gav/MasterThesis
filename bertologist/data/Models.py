@@ -112,7 +112,7 @@ class ProbingClassifier(BaseProbingClassifier):
             num_clusters=num_clusters,
             input_size=input_size,
         )
-        self.class_weights = class_weights.to(self.device)
+        self.class_weights = class_weights
 
         # 3 layers with regularization
         self.fc1 = nn.Linear(input_size, 512)
