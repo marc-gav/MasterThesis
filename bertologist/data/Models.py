@@ -112,12 +112,15 @@ class ProbingClassifier(BaseProbingClassifier):
         self.class_weights = class_weights
 
         # 3 layers with regularization
-        self.fc1 = nn.Linear(input_size, 512)
-        self.fc2 = nn.Linear(512, num_clusters)
+        self.fc1 = nn.Linear(input_size, 1024)
+        self.fc2 = nn.Linear(1024, 512)
+        self.fc3 = nn.Linear(512, num_clusters)
 
     def forward(self, x):
         x = self.fc1(x)
         x = F.relu(x)
         x = self.fc2(x)
+        x = F.relu(x)
+        x = self.fc3(x)
         x = x * self.class_weights
         return x
