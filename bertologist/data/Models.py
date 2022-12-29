@@ -37,7 +37,7 @@ class BaseProbingClassifier(pl.LightningModule):
         self.hyperparams = hyperparams
 
         self.input_size = input_size
-        self.class_weights = class_weights
+        self.class_weights = class_weights.to(self.device)
         self.num_clusters = num_clusters
 
     def forward(self, x):
