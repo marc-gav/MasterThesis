@@ -118,8 +118,8 @@ class ProbingClassifier(BaseProbingClassifier):
         self.class_weights = class_weights.detach()
 
         # sparse csr matrix
-        self.fc1 = SparseLinear(input_size, 1024)  # , sparsity=sparsity)
-        self.fc2 = SparseLinear(1024, num_clusters)
+        self.fc1 = nn.Linear(input_size, 32)  # , sparsity=sparsity)
+        self.fc2 = nn.Linear(32, num_clusters)
 
     def forward(self, x):
         x = self.fc1(x)

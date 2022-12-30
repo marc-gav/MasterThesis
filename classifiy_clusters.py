@@ -117,9 +117,6 @@ def train_experiment():
 
     # wandb.watch(model, log="all", log_freq=50, log_graph=True)
 
-    # TRAIN_DATASET.sparsify_data()
-    # VAL_DATASET.sparsify_data()
-
     train_dataloader = DataLoader(
         TRAIN_DATASET,
         batch_size=run.config["batch_size"],
