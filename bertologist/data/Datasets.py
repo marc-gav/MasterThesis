@@ -254,6 +254,36 @@ def load_training_sentences() -> list[str]:
         return sentences
 
 
+class ClusteredBOWDataset(Dataset):
+    def __init__(
+        self,
+        data: torch.Tensor = None,
+        labels: torch.Tensor = None,
+    ):
+
+        self.data = torch.sum(data, dim=1)
+        self.labels = labels
+
+    def __len__(self) -> int:
+        return len(self.data)
+
+    def __getitem__(self, idx: int) -> tuple[torch.Tensor, torch.Tensor]:
+        return self.data[idx], self.labels[idx]
+
+    def get_vocab_size(self) -> int:
+        return self.data.shape[1]
+
+    def get_num_clusters(self) -> int:
+        return self.labels.shape[1]
+
+    def get_class_freq(self) -> torch.Tensor:
+        labels = self.labels.clone().detach().int()
+        # convert binary arrays to 1D, indicating the position of the 1
+        labels = torch.argmax(labels, dim=1)
+        # send to device
+        return torch.bincount(labels)
+
+
 class ClusteredWordsDataset(Dataset):
     def __init__(
         self,

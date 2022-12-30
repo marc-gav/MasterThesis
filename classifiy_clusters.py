@@ -8,7 +8,10 @@ from torch.utils.data import DataLoader
 from pytorch_lightning.loggers.wandb import WandbLogger
 
 from bertologist.data.Models import ProbingClassifier
-from bertologist.data.Datasets import ClusteredWordsDataset
+from bertologist.data.Datasets import (
+    ClusteredWordsDataset,
+    ClusteredBOWDataset,
+)
 from bertologist.data.utils import split_dataset
 
 with open("experiments/config.yaml") as f:
@@ -36,19 +39,21 @@ sampled_sentences = np.random.choice(
 
 sampled_df = df[df["sentence_index"].isin(sampled_sentences)]
 dataset = ClusteredWordsDataset(df=sampled_df)
-VOCAB_SIZE = dataset.get_vocab_size()
-NUM_CLUSTERS = dataset.get_num_clusters()
+del sampled_df
+del df
+bow_dataset = ClusteredBOWDataset(data=dataset.data, labels=dataset.labels)
+del dataset
+VOCAB_SIZE = bow_dataset.get_vocab_size()
+NUM_CLUSTERS = bow_dataset.get_num_clusters()
 
 TRAIN_SPLIT = 0.8
 VAL_SPLIT = 0.2
-TRAIN_DATASET, VAL_DATASET = split_dataset(dataset, [TRAIN_SPLIT, VAL_SPLIT])
+TRAIN_DATASET, VAL_DATASET = split_dataset(
+    bow_dataset, [TRAIN_SPLIT, VAL_SPLIT]
+)
 
 # class frequency of TRAIN_DATASET
 CLASS_FREQ = TRAIN_DATASET.get_class_freq()
-
-# Flatten the datapoints to fit them into the forward pass
-TRAIN_DATASET.data = TRAIN_DATASET.data.view(TRAIN_DATASET.data.shape[0], -1)
-VAL_DATASET.data = VAL_DATASET.data.view(VAL_DATASET.data.shape[0], -1)
 
 print(
     f"Number of datapoints: {len(TRAIN_DATASET.data)}",
@@ -97,17 +102,11 @@ def train_experiment():
     wandb.run.summary["train_split"] = TRAIN_SPLIT
     wandb.run.summary["val_split"] = VAL_SPLIT
 
-    batch_size = run.config["batch_size"]
-    # get the sparsity of the data
-    nnz = TRAIN_DATASET.data[:batch_size].nonzero().shape[0]
-    DATA_SPARSITY = 1 - (nnz / TRAIN_DATASET.data[:batch_size].nelement())
-
     model = ProbingClassifier(
         run.config,
         input_size=TRAIN_DATASET.data[0].nelement(),
         num_clusters=NUM_CLUSTERS,
         class_weights=class_weights,
-        sparsity=DATA_SPARSITY,
     )
 
     # print infomration about TRAIN_DATASET:
