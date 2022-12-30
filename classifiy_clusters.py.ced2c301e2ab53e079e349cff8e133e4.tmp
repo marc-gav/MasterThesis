@@ -4,7 +4,6 @@ import yaml
 import pytorch_lightning as pl
 import torch
 import numpy as np
-import gzip
 import pickle
 from torch.utils.data import DataLoader
 from pytorch_lightning.loggers.wandb import WandbLogger
@@ -33,7 +32,7 @@ df = pd.read_csv(
 ARCHITECTURE = input("Enter the architecture type: ")
 
 # unzip datasets/light_training_dataset_bow.pkl.zip
-with gzip.open(f"datasets/light_training_dataset_bow.pkl.gz", "rb") as f:
+with open("datasets/light_training_dataset_bow.pkl", "rb") as f:
     bow_dataset = pickle.load(f)
 
 VOCAB_SIZE = bow_dataset.get_vocab_size()
