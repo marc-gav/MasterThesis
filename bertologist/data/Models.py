@@ -1,6 +1,5 @@
 from torch import optim, nn
 from torch.utils.data import DataLoader
-from sparselinear import SparseLinear
 from torch.nn import functional as F
 import pytorch_lightning as pl
 from wandb.sdk.wandb_config import Config
