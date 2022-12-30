@@ -4,6 +4,7 @@ import yaml
 import pytorch_lightning as pl
 import torch
 import numpy as np
+import pickle
 from torch.utils.data import DataLoader
 from pytorch_lightning.loggers.wandb import WandbLogger
 
@@ -29,20 +30,11 @@ df = pd.read_csv(
 )
 
 ARCHITECTURE = input("Enter the architecture type: ")
-FRAC = float(input("Enter the fraction of the dataset to use: [0, 1]: "))
 
-# sample some percentage of the sentences
-unique_sentences = df["sentence_index"].unique()
-sampled_sentences = np.random.choice(
-    unique_sentences, int(len(unique_sentences) * FRAC), replace=False
-)
+# open datasets/light_training_dataset_bow.pkl.zip
+with open("datasets/light_training_dataset_bow.pkl.zip", "rb") as f:
+    bow_dataset = pickle.load(f)
 
-sampled_df = df[df["sentence_index"].isin(sampled_sentences)]
-dataset = ClusteredWordsDataset(df=sampled_df)
-del sampled_df
-del df
-bow_dataset = ClusteredBOWDataset(data=dataset.data, labels=dataset.labels)
-del dataset
 VOCAB_SIZE = bow_dataset.get_vocab_size()
 NUM_CLUSTERS = bow_dataset.get_num_clusters()
 
@@ -94,8 +86,6 @@ def train_experiment():
     # it seems the shadiest implementation of an API I've ever seen
     wandb_logger = WandbLogger()
 
-    # log architecture type
-    wandb.run.summary["dataset_fraction"] = FRAC
     wandb.run.summary["architecture"] = ARCHITECTURE
 
     # log train and val splits
