@@ -1,5 +1,6 @@
 from torch import optim, nn
 from torch.utils.data import DataLoader
+from sparselinear import SparseLinear
 from torch.nn import functional as F
 import pytorch_lightning as pl
 from wandb.sdk.wandb_config import Config
@@ -102,25 +103,27 @@ class BaseProbingClassifier(pl.LightningModule):
 
 class ProbingClassifier(BaseProbingClassifier):
     def __init__(
-        self, hyperparams: Config, input_size, num_clusters, class_weights
+        self,
+        hyperparams: Config,
+        input_size,
+        num_clusters,
+        class_weights,
+        sparsity,
     ):
         super().__init__(
             hyperparams,
             num_clusters=num_clusters,
             input_size=input_size,
         )
-        self.class_weights = class_weights
+        self.class_weights = class_weights.detach()
 
-        # 3 layers with regularization
-        self.fc1 = nn.Linear(input_size, 1024)
-        self.fc2 = nn.Linear(1024, 512)
-        self.fc3 = nn.Linear(512, num_clusters)
+        # sparse csr matrix
+        self.fc1 = SparseLinear(input_size, 1024)  # , sparsity=sparsity)
+        self.fc2 = SparseLinear(1024, num_clusters)
 
     def forward(self, x):
         x = self.fc1(x)
+        x = F.normalize(x, p=2, dim=1)
         x = F.relu(x)
         x = self.fc2(x)
-        x = F.relu(x)
-        x = self.fc3(x)
-        x = x * self.class_weights
         return x

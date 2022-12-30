@@ -289,6 +289,13 @@ class ClusteredWordsDataset(Dataset):
         # send to device
         return torch.bincount(labels)
 
+    def get_data_sparsity(self) -> float:
+        # get number of non-zero elements
+        nnz = self.data.nonzero(as_tuple=True)[0].shape[0]
+        # get total number of elements
+        total = self.data.shape[0] * self.data.shape[1] * self.data.shape[2]
+        return 1 - (nnz / total)
+
     def df_init(self, df):
         top_n_words = 10
         word_to_idx: dict[str, int] = {}
@@ -298,7 +305,9 @@ class ClusteredWordsDataset(Dataset):
         vocab_size = len(word_to_idx)
 
         self.sentences = df["sentence_index"].unique()
+        # use torch sparse tensors to save memory
         self.data = torch.zeros((len(self.sentences), top_n_words, vocab_size))
+
         self.labels = torch.zeros((len(self.sentences)), dtype=torch.long)
 
         # We use two different indices because we don't trust the data.
@@ -322,6 +331,9 @@ class ClusteredWordsDataset(Dataset):
                 one_hot_matrix[i, word_to_idx[word]] = attention
             self.data[sentence_num, :, :] = one_hot_matrix
             self.labels[sentence_num] = cluster_value
+            # release the dataframe from memory
+
+        del df
 
         unique_labels = torch.unique(self.labels)
         assert torch.all(
@@ -333,6 +345,11 @@ class ClusteredWordsDataset(Dataset):
         for i, label in enumerate(self.labels):
             one_hot_labels[i, label] = 1
         self.labels = one_hot_labels
+
+    def sparsify_data(self):
+        # convert data and labels to CSR sparse matrices
+        self.data = self.data.to_sparse_csr()
+        self.labels = self.labels.to_sparse_csr()
 
     def pre_existing_init(self, data, labels):
         self.data = data

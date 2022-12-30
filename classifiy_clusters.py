@@ -27,7 +27,6 @@ df = pd.read_csv(
 
 ARCHITECTURE = input("Enter the architecture type: ")
 FRAC = float(input("Enter the fraction of the dataset to use: [0, 1]: "))
-ACCELERATOR = input("Enter the accelerator type: ")
 
 # sample some percentage of the sentences
 unique_sentences = df["sentence_index"].unique()
@@ -76,8 +75,12 @@ def train_experiment():
     class_weights = 1 / torch.tensor(CLASS_FREQ, dtype=torch.float)
 
     # send class weights to the GPU
-    if ACCELERATOR == "gpu":
+    if torch.cuda.is_available():
+        ACCELERATOR = "gpu"
         class_weights = class_weights.cuda()
+    else:
+        # use SparseCsrCPU backend
+        ACCELERATOR = "cpu"
 
     """Trains the model and logs the results to wandb"""
     run = wandb.init(
@@ -85,9 +88,6 @@ def train_experiment():
     )  # config param gets ignored if its a sweep. Idk what to say,
     # it seems the shadiest implementation of an API I've ever seen
     wandb_logger = WandbLogger()
-
-    # one batch
-    batch_size = run.config["batch_size"]
 
     # log architecture type
     wandb.run.summary["dataset_fraction"] = FRAC
@@ -97,11 +97,17 @@ def train_experiment():
     wandb.run.summary["train_split"] = TRAIN_SPLIT
     wandb.run.summary["val_split"] = VAL_SPLIT
 
+    batch_size = run.config["batch_size"]
+    # get the sparsity of the data
+    nnz = TRAIN_DATASET.data[:batch_size].nonzero().shape[0]
+    DATA_SPARSITY = 1 - (nnz / TRAIN_DATASET.data[:batch_size].nelement())
+
     model = ProbingClassifier(
         run.config,
         input_size=TRAIN_DATASET.data[0].nelement(),
         num_clusters=NUM_CLUSTERS,
         class_weights=class_weights,
+        sparsity=DATA_SPARSITY,
     )
 
     # print infomration about TRAIN_DATASET:
@@ -110,6 +116,10 @@ def train_experiment():
     # size in memory (in GB) of the whole dataset
 
     # wandb.watch(model, log="all", log_freq=50, log_graph=True)
+
+    # TRAIN_DATASET.sparsify_data()
+    # VAL_DATASET.sparsify_data()
+
     train_dataloader = DataLoader(
         TRAIN_DATASET,
         batch_size=run.config["batch_size"],
@@ -121,6 +131,7 @@ def train_experiment():
         shuffle=False,
     )
 
+    # log flops
     trainer = pl.Trainer(
         max_epochs=10000,
         logger=wandb_logger,
