@@ -113,11 +113,12 @@ class ProbingClassifier(BaseProbingClassifier):
             num_clusters=num_clusters,
             input_size=input_size,
         )
-        self.inverse_frequency_of_classes = inverse_frequency_of_classes.detach()
+        self.inverse_frequency_of_classes = (
+            inverse_frequency_of_classes.detach()
+        )
         self.fc1 = nn.Linear(input_size, num_clusters)
 
     def forward(self, x):
         x = self.fc1(x)
-        # debias the output
         x = x * self.inverse_frequency_of_classes
         return x
