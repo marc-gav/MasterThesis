@@ -106,19 +106,20 @@ class ProbingClassifier(BaseProbingClassifier):
         hyperparams: Config,
         input_size,
         num_clusters,
-        inverse_frequency_of_classes,
+        class_weights,
     ):
         super().__init__(
             hyperparams,
             num_clusters=num_clusters,
             input_size=input_size,
         )
-        self.inverse_frequency_of_classes = (
-            inverse_frequency_of_classes.detach()
-        )
-        self.fc1 = nn.Linear(input_size, num_clusters)
+        self.class_weights = 1 / class_weights.detach()
+        self.fc1 = nn.Linear(input_size, 2048)
+        self.fc2 = nn.Linear(2048, num_clusters)
 
     def forward(self, x):
         x = self.fc1(x)
-        x = x * self.inverse_frequency_of_classes
+        x = F.relu(x)
+        x = self.fc2(x)
+        x = x * self.class_weights
         return x

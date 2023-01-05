@@ -358,7 +358,9 @@ class ClusteredWordsDataset(Dataset):
             )  # Fixed size top_n_words. If the sentence is shorter, the rest is implicitly padded with 0s
             for i, word in enumerate(words[:top_n_words]):
                 attention = sentence_df["salience_value"].values[i]
-                one_hot_matrix[i, word_to_idx[word]] = attention
+                one_hot_matrix[
+                    i, word_to_idx[word]
+                ] = 1  # TODO: USE ATTENTION HERE
             self.data[sentence_num, :, :] = one_hot_matrix
             self.labels[sentence_num] = cluster_value
             # release the dataframe from memory
