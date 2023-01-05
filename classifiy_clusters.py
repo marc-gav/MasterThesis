@@ -23,15 +23,8 @@ with open("experiments/config.yaml") as f:
 with open("experiments/sweep.yaml") as f:
     SWEEP_CONFIG = yaml.load(f, Loader=yaml.FullLoader)
 
-df = pd.read_csv(
-    "datasets/training_dataset_light.csv",
-    sep=",",
-    index_col=False,
-    usecols=["word", "sentence_index", "cluster_label", "salience_value"],
-)
-
-dataset = ClusteredWordsDataset(df)
-bow_dataset = ClusteredBOWDataset(dataset.data, dataset.labels)
+with gzip.open("datasets/light_training_dataset_bow.pkl.zip", "rb") as f:
+    bow_dataset = pickle.load(f)
 
 ARCHITECTURE = input("Enter the architecture type: ")
 NOTES = input("Enter any notes: ")
