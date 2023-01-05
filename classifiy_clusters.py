@@ -23,7 +23,6 @@ with open("experiments/config.yaml") as f:
 with open("experiments/sweep.yaml") as f:
     SWEEP_CONFIG = yaml.load(f, Loader=yaml.FullLoader)
 
-# read only 50% of the dataset
 df = pd.read_csv(
     "datasets/training_dataset_light.csv",
     sep=",",
@@ -31,12 +30,11 @@ df = pd.read_csv(
     usecols=["word", "sentence_index", "cluster_label", "salience_value"],
 )
 
+dataset = ClusteredWordsDataset(df)
+bow_dataset = ClusteredBOWDataset(dataset.data, dataset.labels)
+
 ARCHITECTURE = input("Enter the architecture type: ")
 NOTES = input("Enter any notes: ")
-
-# unzip datasets/light_training_dataset_bow.pkl.zip
-with gzip.open(f"datasets/light_training_dataset_bow.pkl.gz", "rb") as f:
-    bow_dataset = pickle.load(f)
 
 VOCAB_SIZE = bow_dataset.get_vocab_size()
 NUM_CLUSTERS = bow_dataset.get_num_clusters()
@@ -68,11 +66,8 @@ np.random.seed(SEED)
 
 def train_experiment():
 
-    # the dataset is biased for some classes more than others
-    # so we need to weight the loss function accordingly
-    # this is done by computing the inverse of the class frequencies
-    # and then normalizing the weights so that they sum to 1
-    class_weights = 1 / torch.tensor(CLASS_FREQ, dtype=torch.float)
+    # wj=n_samples / (n_classes * n_samplesj)
+    class_weights = torch.sum(CLASS_FREQ) / (NUM_CLUSTERS * CLASS_FREQ)
 
     # send class weights to the GPU
     if torch.cuda.is_available():
@@ -100,7 +95,7 @@ def train_experiment():
         run.config,
         input_size=TRAIN_DATASET.data[0].nelement(),
         num_clusters=NUM_CLUSTERS,
-        inverse_frequency_of_classes=class_weights,
+        class_weights=class_weights,
     )
 
     # print infomration about TRAIN_DATASET:
