@@ -100,7 +100,7 @@ def train_experiment():
         run.config,
         input_size=TRAIN_DATASET.data[0].nelement(),
         num_clusters=NUM_CLUSTERS,
-        class_weights=class_weights,
+        inverse_frequency_of_classes=class_weights,
     )
 
     # print infomration about TRAIN_DATASET:
