@@ -5,6 +5,7 @@ import pytorch_lightning as pl
 import torch
 import numpy as np
 import gzip
+import os
 import pickle
 from torch.utils.data import DataLoader
 from pytorch_lightning.loggers.wandb import WandbLogger
@@ -31,6 +32,7 @@ df = pd.read_csv(
 )
 
 ARCHITECTURE = input("Enter the architecture type: ")
+NOTES = input("Enter any notes: ")
 
 # unzip datasets/light_training_dataset_bow.pkl.zip
 with gzip.open(f"datasets/light_training_dataset_bow.pkl.gz", "rb") as f:
@@ -92,6 +94,7 @@ def train_experiment():
     # log train and val splits
     wandb.run.summary["train_split"] = TRAIN_SPLIT
     wandb.run.summary["val_split"] = VAL_SPLIT
+    wandb.run.summary["notes"] = NOTES
 
     model = ProbingClassifier(
         run.config,
@@ -137,6 +140,8 @@ def train_experiment():
         val_dataloaders=val_dataloader,
     )
 
+    # save model architecture
+    wandb.save(os.path.join(wandb.run.dir, "bertologist/data/Models.py"))
     wandb.finish()
 
 
