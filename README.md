@@ -1,5 +1,13 @@
-# MasterThesis Source Code
-This repository contains the source code for the Master's thesis project.
+# Master Thesis Source Code
+This repository contains the source code for my Master's thesis project.
+
+### Abstract
+This thesis explores the potential of natural language processing (NLP) in the social sciences, specifically the clustering of contextual word embeddings. However, the limited interpretability of these techniques makes it difficult to get a deeper understanding. To address this issue, this thesis proposes a strategy to provide social scientists with a human-friendly explanation of word clusters by using the contextual information around each item to provide an explanation for each cluster.
+
+Using various explainability techniques, salience scores are generated to rank the contextual elements of sentences in order of importance. Then, a probing classifier evaluates the information highlighted by each explainability technique and predicts the cluster to which each embedded word belongs.
+
+The results of this thesis indicate that the use of explainability techniques can generate informative explanations that can help us understand the 
+distinctions between different clusters of contextual word embeddings. Ultimately, we believe that our work can help social scientists be more confident in using contextual word embeddings for various NLP tasks.
 
 # Installation
 Install the module in the main folder like:
