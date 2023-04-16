@@ -1,0 +1,23 @@
+# optimizer,adam
+# batch_size,32
+# architecture,linear
+# learning_rate,0.0853880868731485
+# salience_weighting,0
+# class_defrequencing_method,ISNS
+# salience_method,integrated
+# cluster_method,KMeans
+# num_clusters,2
+# is_salience_weighting,False
+# epoch,3
+
+batch_size: 32
+learning_rate: 0.0853880868731485
+optimizer: adam
+architecture: linear
+salience_weighting: 0
+class_defrequencing_method: ISNS
+salience_method: integrated
+cluster_method: KMeans
+num_clusters: 2
+is_salience_weighting: False
+

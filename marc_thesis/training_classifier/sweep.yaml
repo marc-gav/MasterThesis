@@ -1,0 +1,20 @@
+project: '[it will change to your project name]'
+method: bayes
+metric:
+  name: val_f1
+  goal: minimize
+parameters:
+  learning_rate:
+    min: 0.001
+    max: 0.1
+  optimizer:
+    values: ["adam"]
+  batch_size:
+    values: [32]
+  class_defrequencing_method: # true or false
+    values: [ "ENS"]
+  salience_weighting: # true or false
+    values: [0]
+  architecture:
+    values: ['linear', 'two_layer', 'three_layer']
+  
